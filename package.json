@@ -1,0 +1,11 @@
+{
+  "dependencies": {
+    "@react-three/drei": "^9.121.4",
+    "@react-three/fiber": "^8.17.14",
+    "three": "^0.173.0",
+    "three-stdlib": "^2.35.13"
+  },
+  "devDependencies": {
+    "@types/three": "^0.173.0"
+  }
+}
