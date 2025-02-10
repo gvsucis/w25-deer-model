@@ -85,8 +85,4 @@ export default function Services() {
       </div>
     </main>
   );
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 0f9c9dafd269c5bcf29956275ca0414f2f2b7e2b
