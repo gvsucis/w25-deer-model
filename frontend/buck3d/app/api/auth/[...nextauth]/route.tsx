@@ -9,7 +9,7 @@ declare module "next-auth" {
   interface Session extends DefaultSession {
     accessToken?: string;
     user: {
-      id: string; // Ensure `id` is included
+      id: string; 
       name: string;
       email: string;
       image?: string;
@@ -17,12 +17,15 @@ declare module "next-auth" {
   }
   interface JWT {
     accessToken: string;
-    id: string; // Store `id` inside JWT
+    id: string; 
   }
 }
 
 export const authOptions: NextAuthOptions = {
   adapter: PrismaAdapter(prisma),
+  session: {
+    strategy: "jwt",
+  },
   providers: [
     GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID!,
@@ -39,15 +42,13 @@ export const authOptions: NextAuthOptions = {
       account?: Account | null;
       user?: User;
     }) {
-      // When signing in, both account and user are defined.
       if (account && user) {
         token.accessToken = account.access_token!;
-        token.id = user.id; // Directly assign the user ID at sign‑in
+        token.sub = user.id;
       }
       return token;
     },
     async session({ session, token }: { session: Session; token: JWT }) {
-      // Use the token values we set in the jwt callback.
       session.accessToken = token.accessToken as string;
       session.user.id = token.sub as string;
       console.log("Session Callback - Session:", session);
