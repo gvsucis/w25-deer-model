@@ -1,6 +1,27 @@
+"use client"
 import UploadFile from "../components/uploadDropbox/UploadFile";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import { useSession } from "next-auth/react";
+
+interface Scan {
+  scanid: string;
+  userid: string;
+  url: string;
+  createdAt: string;
+}
 
 export default function Scans() {
+  const { data: session, status } = useSession();
+  const [scans, setScans] = useState<Scan[]>([]);
+  useEffect(() => {
+    if (status === "authenticated" && session?.user?.id) {
+      axios
+        .get(`http://localhost:8000/api/scans?userid=${session.user.id}`)
+        .then((response) => setScans(response.data))
+        .catch((error) => console.error("internal eror", error));
+    }
+  }, [status, session]);
   return (
     <main className="bg-stone-300 min-h-screen font-[family-name:var(--font-geist-sans)]">
       <div className="grid grid-cols-[300px_1fr] gap-4 p-4 w-full pt-[120px]">
@@ -43,61 +64,30 @@ export default function Scans() {
         Previous Scans
       </div>
       <div className="grid grid-cols-5 gap-10 w-full justify-evenly ml-6 mr-6 text-center">
-        <div className="relative rounded-lg bg-yellow-950 w-32 h-32 border-4 border-black">
-          1
-          <a
-            className="absolute bottom-2 right-2 rounded-full border border-solid border-transparent bg-orange-500 transition-colors flex items-center justify-center bg-foreground text-black hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm h-5 w-12 px-4"
-            href=""
-            target="_self"
-            rel="noopener noreferrer"
-          >
-            View
-          </a>
-        </div>
-        <div className="relative rounded-lg bg-yellow-950 w-32 h-32 border-4 border-black">
-          2
-          <a
-            className="absolute bottom-2 right-2 rounded-full border border-solid border-transparent bg-orange-500 transition-colors flex items-center justify-center bg-foreground text-black hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm h-5 w-12 px-4"
-            href=""
-            target="_self"
-            rel="noopener noreferrer"
-          >
-            View
-          </a>
-        </div>
-        <div className="relative rounded-lg bg-yellow-950 w-32 h-32 border-4 border-black">
-          3
-          <a
-            className="absolute bottom-2 right-2 rounded-full border border-solid border-transparent bg-orange-500 transition-colors flex items-center justify-center bg-foreground text-black hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm h-5 w-12 px-4"
-            href=""
-            target="_self"
-            rel="noopener noreferrer"
-          >
-            View
-          </a>
-        </div>
-        <div className="relative rounded-lg bg-yellow-950 w-32 h-32 border-4 border-black">
-          4
-          <a
-            className="absolute bottom-2 right-2 rounded-full border border-solid border-transparent bg-orange-500 transition-colors flex items-center justify-center bg-foreground text-black hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm h-5 w-12 px-4"
-            href=""
-            target="_self"
-            rel="noopener noreferrer"
-          >
-            View
-          </a>
-        </div>
-        <div className="relative rounded-lg bg-yellow-950 w-32 h-32 border-4 border-black">
-          5
-          <a
-            className="absolute bottom-2 right-2 rounded-full border border-solid border-transparent bg-orange-500 transition-colors flex items-center justify-center bg-foreground text-black hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm h-5 w-12 px-4"
-            href=""
-            target="_self"
-            rel="noopener noreferrer"
-          >
-            View
-          </a>
-        </div>
+        {scans.length > 0 ? (
+          scans.map((scan, index) => (
+            <div
+              key={scan.scanid}
+              className="relative rounded-lg w-32 h-32 border-4 border-black overflow-hidden"
+            >
+              <img
+                src={scan.url}
+                alt={`Scan ${index + 1}`}
+                className="object-cover w-full h-full"
+              />
+              <a
+                className="absolute bottom-2 right-2 rounded-full bg-orange-500 transition-colors flex items-center justify-center text-black hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm h-5 w-12 px-4"
+                href={scan.url}
+                target="_self"
+                rel="noopener noreferrer"
+              >
+                View
+              </a>
+            </div>
+          ))
+        ) : (
+          <p className="col-span-5">No scans available yet.</p>
+        )}
       </div>
     </main>
   );

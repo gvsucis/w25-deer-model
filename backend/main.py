@@ -42,3 +42,10 @@ def create_scan(scan: ScanCreate):
     )
     conn.commit()
     return {"message": "Scan saved successfully"}
+
+@app.get("/api/scans")
+def get_scans(userid : str):
+    cur.execute('SELECT * FROM "Scan2D" WHERE userid = %s ORDER BY "createdAt" DESC',
+                (userid,))
+    scans = cur.fetchall()
+    return scans
