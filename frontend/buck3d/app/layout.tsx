@@ -1,7 +1,9 @@
-import type { Metadata } from "next";
+"use client"
+
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import MainNavbar from "./components/navbar/MainNavbar";
+import { SessionProvider } from "next-auth/react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -11,12 +13,9 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+  display: "swap",
 });
 
-export const metadata: Metadata = {
-  title: "BuckView3D",
-  description: "Visualize your buck antlers in 3D",
-};
 
 export default function RootLayout({
   children,
@@ -28,8 +27,10 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+       <SessionProvider>
         <MainNavbar/>
-        {children}
+         {children}
+        </SessionProvider>
       </body>
     </html>
   );
