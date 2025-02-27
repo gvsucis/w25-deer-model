@@ -12,13 +12,11 @@ export default function UploadFile() {
 
   const onDrop = useCallback(
     async (acceptedFiles: File[]) => {
-      // Wait until the session has loaded
       if (status === "loading") {
         console.warn("Session is still loading. Please try again shortly.");
         return;
       }
 
-      // Ensure the user is authenticated before proceeding
       if (!session?.user?.id) {
         console.error("User is not authenticated or session is not available.");
         return;
@@ -30,7 +28,6 @@ export default function UploadFile() {
       setUploading(true);
 
       try {
-        // Request a signed URL for the upload
         const { data } = await axios.post("/api/upload", {
           filename: file.name,
           filetype: file.type,
@@ -38,8 +35,10 @@ export default function UploadFile() {
 
         const { uploadUrl, fileUrl } = data;
 
-        await axios.put(uploadUrl, file, {
+        await fetch(uploadUrl, {
+          method: "PUT",
           headers: { "Content-Type": file.type },
+          body: file,
         });
 
         setFileUrl(fileUrl);
@@ -69,12 +68,13 @@ export default function UploadFile() {
         <p>Drag & Drop a file or click to select</p>
       )}
       {fileUrl && (
-        <p>
-          Uploaded:{" "}
-          <a href={fileUrl} target="_blank" rel="noreferrer">
-            {fileUrl}
-          </a>
-        </p>
+        <div className="mt-4">
+          <img
+            src={fileUrl}
+            alt="Uploaded file preview"
+            className="max-w-full h-auto"
+          />
+        </div>
       )}
     </div>
   );

@@ -1,5 +1,7 @@
 import uuid
 from fastapi import FastAPI
+from dotenv import load_dotenv
+
 
 app = FastAPI()
 
@@ -16,6 +18,8 @@ import os
 
 app = FastAPI()
 
+load_dotenv()
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["http://localhost:3000"],
@@ -24,7 +28,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-DATABASE_URL = "postgresql://postgres:andrew@localhost:5432/buck3d"
+DATABASE_URL = os.getenv("DATABASE_URL")
 
 conn = psycopg2.connect(DATABASE_URL, cursor_factory=RealDictCursor)
 cur = conn.cursor()
@@ -42,3 +46,10 @@ def create_scan(scan: ScanCreate):
     )
     conn.commit()
     return {"message": "Scan saved successfully"}
+
+@app.get("/api/scans")
+def get_scans(userid : str):
+    cur.execute('SELECT * FROM "Scan2D" WHERE userid = %s ORDER BY "createdAt" DESC',
+                (userid,))
+    scans = cur.fetchall()
+    return scans
