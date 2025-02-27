@@ -1,3 +1,6 @@
+"use client"
+import AuthButton from "../Buttons/AuthButton"
+
 export default function MainNavbar() {
     return (
         <header className="flex items-center justify-between font-sans font-bold p-5 bg-white shadow-md w-full h-[100px] fixed top-0 left-0">
@@ -30,13 +33,8 @@ export default function MainNavbar() {
                     Scans
                 </a>
                 {/*add profile page*/}
-                <a
-                    className="text-stone-600 flex items-center hover:underline hover:underline-offset-4 text-sm"
-                    href=""
-                    target="_self"
-                    rel="noopener noreferrer"
-                >
-                    Profile
+                <a>
+                <AuthButton/>
                 </a>
             </div>
         </header>

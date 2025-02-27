@@ -1,12 +1,15 @@
+import UploadFile from "../components/uploadDropbox/UploadFile";
+
 export default function Scans() {
   return (
     <main className="bg-stone-300 min-h-screen font-[family-name:var(--font-geist-sans)]">
       <div className="grid grid-cols-[300px_1fr] gap-4 p-4 w-full pt-[120px]">
         {/*Upload file box*/}
-        <div className="column-start-1 flex flex-col items-center text-black text-lg justify-center box border-4 border-black bg-white p-1 h-[200px] w-[300px]">
-          Upload Your Buck Photo Here
+        <div className="flex flex-col items-center text-black text-lg justify-center box border-4 border-black bg-white p-1 h-[200px] w-[300px]">
+          <p>Upload Your Buck Photo Here</p>
+          <UploadFile />
           {/*need to add action photo upload to cloud*/}
-          <form action="" className="text-sm p-3 space-y-12">
+          {/* <form action="" className="text-sm p-3 space-y-12">
             <input
               type="file"
               name="buck_photo"
@@ -17,7 +20,7 @@ export default function Scans() {
               value="Upload Image"
               className="text-lg text-white border-solid border-black border-2 bg-blue-600 rounded hover:bg-[#383838] dark:hover:bg-[#ccc] px-2 h-8"
             />
-          </form>
+          </form> */}
         </div>
         {/*Antler Viewing Box*/}
         <div className="whitespace-nowrap items-start column-start-2 grid grid-rows-[40px-1fr-40px]">
