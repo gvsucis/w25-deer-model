@@ -28,6 +28,7 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "@types/react-dropzone": "^5.1.0",
+    "@types/three": "^0.173.0",
     "eslint": "^9",
     "eslint-config-next": "15.1.6",
     "postcss": "^8",
