@@ -1,7 +1,7 @@
 import Image from "next/image";
 export default function Services() {
   return (
-    <main className="bg-stone-300 min-h-screen font-[family-name:var(--font-geist-sans)]">
+    <main className="bg-white min-h-screen font-[family-name:var(--font-geist-sans)]">
       <div className="grid grid-cols-[324px_1fr_1fr] gap-4 p-4 w-full h-[1000px] pt-[120px] whitespace-nowrap">
         {/* First Column - Upload Box & Amount Due */}
         <div className="relative items-start border-r-4 border-black">
