@@ -77,9 +77,7 @@ export default function Home() {
       <div className="bg-orange-500 text-white whitespace-nowrap p-6 mt-[120px] ml-6 max-w-lg shadow-lg rounded-lg">
         <p className="mb-2 font-bold">1. Upload a photo of your buck</p>
         <p className="mb-2 font-bold">2. View the 3D model of your antlers</p>
-        <p className="mb-2 font-bold">
-          3. Purchase a 3D printed replica or taxidermy
-        </p>
+        <p className="mb-2 font-bold">3. Purchase a 3D printed replica or taxidermy</p>
         <div className="flex justify-center items-center gap-2 mt-4">
           <Image
             src="/whitetail-deer-.jpg"

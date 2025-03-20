@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import UploadFile from "../components/uploadDropbox/UploadFile";
 import { useEffect, useState } from "react";
 import axios from "axios";
@@ -14,6 +14,7 @@ interface Scan {
 export default function Scans() {
   const { data: session, status } = useSession();
   const [scans, setScans] = useState<Scan[]>([]);
+
   useEffect(() => {
     if (status === "authenticated" && session?.user?.id) {
       axios
@@ -22,6 +23,7 @@ export default function Scans() {
         .catch((error) => console.error("internal eror", error));
     }
   }, [status, session]);
+
   return (
     <main className="bg-white min-h-screen font-[family-name:var(--font-geist-sans)]">
       <div className="grid grid-cols-[300px_1fr] gap-4 p-4 w-full pt-[120px]">
@@ -65,6 +67,10 @@ export default function Scans() {
                 href="./viewer"
                 target="_self"
                 rel="noopener noreferrer"
+                onClick={() => {
+                  localStorage.setItem("scanid", scan.scanid);
+                  localStorage.setItem("scanurl", scan.url);
+                }}
               >
                 View
               </a>
