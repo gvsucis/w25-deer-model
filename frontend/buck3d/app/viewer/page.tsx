@@ -81,5 +81,15 @@ export default function Viewer() {
     }
   }, []);
 
-  return <div ref={antlersRef}></div>;
+  return (
+    <div className="">
+      <div className="items-center justify-start text-2xl text-black"
+      >
+        Current File: (placeholder)
+      </div>
+      <div 
+        ref={antlersRef}
+      ></div>
+    </div>
+  );
 }
