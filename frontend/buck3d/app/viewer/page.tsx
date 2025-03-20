@@ -43,7 +43,7 @@ export default function Viewer() {
 
       // use entire window
       const renderer = new THREE.WebGLRenderer({ antialias: true });
-      renderer.setSize(window.innerWidth, window.innerHeight);
+      renderer.setSize(window.innerWidth, window.innerHeight - 120);
       antlersRef.current.appendChild(renderer.domElement);
 
       // load the stl scan
