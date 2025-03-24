@@ -12,7 +12,7 @@ MODEL_PATH = os.path.join(BASE_DIR, "antler_cnn.pth")
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 model = models.resnet50(pretrained=False)
 num_ftrs = model.fc.in_features
-model.fc = torch.nn.Linear(num_ftrs, len(os.listdir(DATA_DIR)))  
+model.fc = torch.nn.Linear(num_ftrs, 47)  
 model.load_state_dict(torch.load(MODEL_PATH, map_location=device))
 model.to(device)
 model.eval()
@@ -37,6 +37,6 @@ def predict_antler(image_path):
     
     return f"Closest match: {antler_name} (Confidence: {confidence:.2%})"
 
-image_path = "test3.png"  #this will be input from user need to fetch from frontend aka a parameter in the post request
+image_path = "buck1.jpg"  #this will be input from user need to fetch from frontend aka a parameter in the post request
 result = predict_antler(image_path)
 print(result)
