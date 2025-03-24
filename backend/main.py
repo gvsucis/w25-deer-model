@@ -55,11 +55,21 @@ def get_scans(userid : str):
     scans = cur.fetchall()
     return scans
 
+@app.get("/api/matches")
+def get_matches(userid: str):
+    cur.execute(
+        'SELECT * FROM "Scan2DMatch" WHERE scanid IN (SELECT scanid FROM "Scan2D" WHERE userid = %s)',
+        (userid,)
+    )
+    matches = cur.fetchall()
+    return matches
+    
+
 @app.post("/api/match-antler")
 async def match_antler_via_url(data: dict):
     userid = data.get("userid")
     file_url = data.get("fileUrl")
-    scanid = data.get("scanid") or str(uuid.uuid4())  # optional: use scanid from frontend
+    scanid = data.get("scanid") or str(uuid.uuid4())  
     if not userid or not file_url:
         return JSONResponse(status_code=400, content={"error": "Missing userid or fileUrl"})
     os.makedirs("temp", exist_ok=True)
@@ -89,5 +99,5 @@ async def match_antler_via_url(data: dict):
     return {
         "scanid": scanid,
         "match": matchid,
-        "modelUrl": f"https://your-bucket-url/{matchid}.stl"
+        "modelUrl": f"https://buckview3d.s3.us-east-1.amazonaws.com/3dmodels/{matchid}.stl"
     }

@@ -37,6 +37,6 @@ def predict_antler(image_path):
     
     return f"Closest match: {antler_name} (Confidence: {confidence:.2%})"
 
-image_path = "buck1.jpg"  #this will be input from user need to fetch from frontend aka a parameter in the post request
-result = predict_antler(image_path)
-print(result)
+  #this will be input from user need to fetch from frontend aka a parameter in the post request
+# result = predict_antler(image_path)
+# print(result)
