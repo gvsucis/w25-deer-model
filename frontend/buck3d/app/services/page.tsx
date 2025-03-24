@@ -1,5 +1,23 @@
+"use client";
+import React from "react";
 import Image from "next/image";
+import emailjs from "emailjs-com";
+
 export default function Services() {
+  const sendEmail = () => {
+    emailjs.send(
+      'service_s752vvc',
+      'template_yt796jk',
+      {
+        message: "Test",
+      },
+      'k7AWvwMDUA2tyGYhb'
+    ).then((response) => {
+      console.log('Email sent successfully!', response.status, response.text);
+    }).catch((err) => {
+      console.error('Failed to send email:', err);
+    });
+  };
   return (
     <main className="bg-white min-h-screen font-[family-name:var(--font-geist-sans)]">
       <div className="grid grid-cols-[324px_1fr_1fr] gap-4 p-4 w-full h-[1000px] pt-[120px] whitespace-nowrap">
@@ -21,6 +39,33 @@ export default function Services() {
               />
             </form>
           </div>
+
+          {/* Purchase Options */}
+          <div className="absolute bottom-24 mt-4 text-black">
+            <h2 className="text-xl font-bold mb-2">Choose Purchase Options</h2>
+            <form className="space-y-2">
+              <div>
+                <input type="checkbox" id="3dModel" name="3dModel" />
+                <label htmlFor="3dModel" className="ml-2">3D Model</label>
+              </div>
+              <div>
+                <input type="checkbox" id="taxidermy" name="taxidermy" />
+                <label htmlFor="taxidermy" className="ml-2">Taxidermy</label>
+              </div>
+              <div>
+                <input type="checkbox" id="both" name="both" />
+                <label htmlFor="both" className="ml-2">Both</label>
+              </div>
+            </form>
+          </div>
+
+          {/* Purchase button */}
+          <input
+            type="button"
+            value="Purchase"
+            className="absolute bottom-10 block text-lg text-white border-solid border-black border-2 bg-green-600 rounded hover:bg-[#383838] dark:hover:bg-[#ccc] px-2 h-10 mt-4"
+            onClick={sendEmail}
+          />
 
           {/* Amount Due Text (Now Positioned Under the Box) */}
           <div className="absolute bottom-0 text-start text-black text-2xl font-bold">
