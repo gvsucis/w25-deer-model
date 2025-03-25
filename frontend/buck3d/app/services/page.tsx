@@ -1,15 +1,23 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import emailjs from "emailjs-com";
 
 export default function Services() {
+  const [serviceType, setServiceType] = useState<string[]>([]);
+
+  const handleServiceTypeChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, checked } = event.target;
+    const updatedServices = checked ? [...serviceType, name] : serviceType.filter((type) => type !== name);
+    setServiceType(updatedServices);
+  };
+
   const sendEmail = () => {
     emailjs.send(
       'service_s752vvc',
       'template_yt796jk',
       {
-        message: "Test",
+        message: `Service Type: ${serviceType.join(", ")}\nPrice: $$$`,
       },
       'k7AWvwMDUA2tyGYhb'
     ).then((response) => {
@@ -45,11 +53,11 @@ export default function Services() {
             <h2 className="text-xl font-bold mb-2">Choose Purchase Options</h2>
             <form className="space-y-2">
               <div>
-                <input type="checkbox" id="3dModel" name="3dModel" />
+                <input type="checkbox" id="3dModel" name="3dModel" onChange={handleServiceTypeChange} />
                 <label htmlFor="3dModel" className="ml-2">3D Model</label>
               </div>
               <div>
-                <input type="checkbox" id="taxidermy" name="taxidermy" />
+                <input type="checkbox" id="taxidermy" name="taxidermy" onChange={handleServiceTypeChange} />
                 <label htmlFor="taxidermy" className="ml-2">Taxidermy</label>
               </div>
             </form>
@@ -59,7 +67,7 @@ export default function Services() {
           <input
             type="button"
             value="Purchase"
-            className="absolute bottom-10 block text-lg text-white border-solid border-black border-2 bg-green-600 rounded hover:bg-[#383838] dark:hover:bg-[#ccc] px-2 h-10 mt-4"
+            className="absolute bottom-10 block text-lg text-white border-solid border-black border-2 bg-orange-500 rounded hover:bg-[#383838] dark:hover:bg-[#ccc] px-2 h-10 mt-4"
             onClick={sendEmail}
           />
 
