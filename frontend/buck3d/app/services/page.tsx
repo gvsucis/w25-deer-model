@@ -52,10 +52,6 @@ export default function Services() {
                 <input type="checkbox" id="taxidermy" name="taxidermy" />
                 <label htmlFor="taxidermy" className="ml-2">Taxidermy</label>
               </div>
-              <div>
-                <input type="checkbox" id="both" name="both" />
-                <label htmlFor="both" className="ml-2">Both</label>
-              </div>
             </form>
           </div>
 
