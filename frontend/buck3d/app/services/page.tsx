@@ -1,7 +1,33 @@
+"use client";
+import React, { useState } from "react";
 import Image from "next/image";
+import emailjs from "emailjs-com";
+
 export default function Services() {
+  const [serviceType, setServiceType] = useState<string[]>([]);
+
+  const handleServiceTypeChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, checked } = event.target;
+    const updatedServices = checked ? [...serviceType, name] : serviceType.filter((type) => type !== name);
+    setServiceType(updatedServices);
+  };
+
+  const sendEmail = () => {
+    emailjs.send(
+      'service_s752vvc',
+      'template_yt796jk',
+      {
+        message: `Service Type: ${serviceType.join(", ")}\nPrice: $$$`,
+      },
+      'k7AWvwMDUA2tyGYhb'
+    ).then((response) => {
+      console.log('Email sent successfully!', response.status, response.text);
+    }).catch((err) => {
+      console.error('Failed to send email:', err);
+    });
+  };
   return (
-    <main className="bg-stone-300 min-h-screen font-[family-name:var(--font-geist-sans)]">
+    <main className="bg-white min-h-screen font-[family-name:var(--font-geist-sans)]">
       <div className="grid grid-cols-[324px_1fr_1fr] gap-4 p-4 w-full h-[1000px] pt-[120px] whitespace-nowrap">
         {/* First Column - Upload Box & Amount Due */}
         <div className="relative items-start border-r-4 border-black">
@@ -21,6 +47,29 @@ export default function Services() {
               />
             </form>
           </div>
+
+          {/* Purchase Options */}
+          <div className="absolute bottom-24 mt-4 text-black">
+            <h2 className="text-xl font-bold mb-2">Choose Purchase Options</h2>
+            <form className="space-y-2">
+              <div>
+                <input type="checkbox" id="3dModel" name="3dModel" onChange={handleServiceTypeChange} />
+                <label htmlFor="3dModel" className="ml-2">3D Model</label>
+              </div>
+              <div>
+                <input type="checkbox" id="taxidermy" name="taxidermy" onChange={handleServiceTypeChange} />
+                <label htmlFor="taxidermy" className="ml-2">Taxidermy</label>
+              </div>
+            </form>
+          </div>
+
+          {/* Purchase button */}
+          <input
+            type="button"
+            value="Purchase"
+            className="absolute bottom-10 block text-lg text-white border-solid border-black border-2 bg-orange-500 rounded hover:bg-[#383838] dark:hover:bg-[#ccc] px-2 h-10 mt-4"
+            onClick={sendEmail}
+          />
 
           {/* Amount Due Text (Now Positioned Under the Box) */}
           <div className="absolute bottom-0 text-start text-black text-2xl font-bold">
