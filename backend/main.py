@@ -1,8 +1,9 @@
 import uuid
-from fastapi import FastAPI
+from fastapi import FastAPI,  APIRouter, Request
 from dotenv import load_dotenv
-
-
+from RecognitionModel.findmatch import predict_antler
+from fastapi.responses import JSONResponse
+import requests
 app = FastAPI()
 
 @app.get("/")
@@ -53,3 +54,50 @@ def get_scans(userid : str):
                 (userid,))
     scans = cur.fetchall()
     return scans
+
+@app.get("/api/matches")
+def get_matches(userid: str):
+    cur.execute(
+        'SELECT * FROM "Scan2DMatch" WHERE scanid IN (SELECT scanid FROM "Scan2D" WHERE userid = %s)',
+        (userid,)
+    )
+    matches = cur.fetchall()
+    return matches
+    
+
+@app.post("/api/match-antler")
+async def match_antler_via_url(data: dict):
+    userid = data.get("userid")
+    file_url = data.get("fileUrl")
+    scanid = data.get("scanid") or str(uuid.uuid4())  
+    if not userid or not file_url:
+        return JSONResponse(status_code=400, content={"error": "Missing userid or fileUrl"})
+    os.makedirs("temp", exist_ok=True)
+    temp_path = os.path.join("temp", f"{scanid}.jpg")
+    try:
+        img_data = requests.get(file_url).content
+        with open(temp_path, "wb") as f:
+            f.write(img_data)
+    except Exception as e:
+        return JSONResponse(status_code=500, content={"error": f"Image download failed: {str(e)}"})
+
+    try:
+        result = predict_antler(temp_path)
+    except Exception as e:
+        os.remove(temp_path)
+        return JSONResponse(status_code=500, content={"error": f"Prediction failed: {str(e)}"})
+
+    os.remove(temp_path)
+    matchid = result.split(" ")[2]  
+    match_uuid = str(uuid.uuid4())
+    cur.execute(
+        'INSERT INTO "Scan2DMatch" (id, scanid, matchid) VALUES (%s, %s, %s)',
+        (match_uuid, scanid, matchid)
+    )
+    conn.commit()
+
+    return {
+        "scanid": scanid,
+        "match": matchid,
+        "modelUrl": f"https://buckview3d.s3.us-east-1.amazonaws.com/3dmodels/{matchid}.stl"
+    }

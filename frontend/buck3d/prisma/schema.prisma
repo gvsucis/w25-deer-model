@@ -58,3 +58,10 @@ model Scan2D {
   url      String  
   createdAt DateTime @default(now())
 }
+
+model Scan2DMatch {
+  id           String   @id @default(cuid())
+  scanid       String
+  matchid      String
+  createdAt    DateTime @default(now())
+}
