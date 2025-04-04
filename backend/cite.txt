@@ -1,0 +1,13 @@
+@misc{
+antler-detection-pkuwz_dataset,
+title = { Antler-Detection Dataset },
+type = { Open Source Dataset },
+author = { Nimble },
+howpublished = { \url{ https://universe.roboflow.com/nimble-o11gk/antler-detection-pkuwz } },
+url = { https://universe.roboflow.com/nimble-o11gk/antler-detection-pkuwz },
+journal = { Roboflow Universe },
+publisher = { Roboflow },
+year = { 2023 },
+month = { aug },
+note = { visited on 2025-04-02 },
+}
