@@ -146,10 +146,13 @@ def train_one_epoch(model, optimizer, data_loader, device):
     model.train()
     
     epoch_loss = 0
+    num_batches = 0
+    
     for images, targets in tqdm(data_loader):
         images = list(image.to(device) for image in images)
         targets = [{k: v.to(device) for k, v in t.items()} for t in targets]
         
+        # In training mode, model returns a dict of losses
         loss_dict = model(images, targets)
         losses = sum(loss for loss in loss_dict.values())
         
@@ -158,25 +161,43 @@ def train_one_epoch(model, optimizer, data_loader, device):
         optimizer.step()
         
         epoch_loss += losses.item()
+        num_batches += 1
     
-    return epoch_loss / len(data_loader)
+    return epoch_loss / num_batches if num_batches > 0 else 0
 
 def evaluate(model, data_loader, device):
     """Evaluate the model"""
     model.eval()
     
+    # For evaluation, we'll use our own loss calculation
+    from torch.nn.functional import cross_entropy
+    
+    val_loss = 0
+    num_batches = 0
+    
     with torch.no_grad():
-        val_loss = 0
         for images, targets in tqdm(data_loader):
             images = list(image.to(device) for image in images)
             targets = [{k: v.to(device) for k, v in t.items()} for t in targets]
             
-            loss_dict = model(images, targets)
-            losses = sum(loss for loss in loss_dict.values())
+            # In eval mode, model returns detection results
+            # So we need to compute the loss manually
+            outputs = model(images)
             
-            val_loss += losses.item()
+            # Calculate a simple loss (just for monitoring)
+            batch_loss = 0
+            for i, target in enumerate(targets):
+                if len(target['boxes']) > 0 and len(outputs[i]['boxes']) > 0:
+                    # Add a simple loss based on the detection scores
+                    batch_loss += (1.0 - outputs[i]['scores'].mean()).item()
+                else:
+                    # Add a penalty if no detections
+                    batch_loss += 1.0
+            
+            val_loss += batch_loss
+            num_batches += 1
     
-    return val_loss / len(data_loader)
+    return val_loss / num_batches if num_batches > 0 else 0
 
 def predict_image(model, image_path, class_names, device, score_threshold=0.5):
     """
