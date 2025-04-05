@@ -32,7 +32,21 @@ class DeerPartsDataset(Dataset):
         if not os.path.exists(self.imgs_path) or not os.path.exists(self.labels_path):
             raise ValueError(f"Dataset directories not found: {self.imgs_path} or {self.labels_path}")
         
-        self.imgs = list(sorted(os.listdir(self.imgs_path)))
+        # Find images that have corresponding labels
+        self.imgs = []
+        self.valid_indices = []
+        
+        all_images = sorted(os.listdir(self.imgs_path))
+        
+        for idx, img_file in enumerate(all_images):
+            img_id = os.path.splitext(img_file)[0]
+            label_file = f"{img_id}.txt"
+            label_path = os.path.join(self.labels_path, label_file)
+            
+            # Check if label file exists and is not empty
+            if os.path.exists(label_path) and os.path.getsize(label_path) > 0:
+                self.imgs.append(img_file)
+                self.valid_indices.append(idx)
         
         # Get class names from data.yaml
         yaml_path = os.path.join(root, "data.yaml")
@@ -41,7 +55,8 @@ class DeerPartsDataset(Dataset):
             self.classes = data['names']
         
         self.num_classes = len(self.classes)
-        print(f"Loaded dataset with {len(self.imgs)} images and {self.num_classes} classes: {self.classes}")
+        print(f"Loaded dataset with {len(self.imgs)} valid images out of {len(all_images)} total images")
+        print(f"Classes: {self.classes}")
 
     def __getitem__(self, idx):
         # Load image
@@ -55,29 +70,48 @@ class DeerPartsDataset(Dataset):
         boxes = []
         labels = []
         
-        if os.path.exists(label_path):
-            with open(label_path, 'r') as f:
-                for line in f.readlines():
-                    data = line.strip().split(' ')
-                    class_id = int(data[0])
-                    # YOLO format: (class_id, x_center, y_center, width, height) normalized
-                    x_center, y_center, width, height = map(float, data[1:5])
-                    
-                    # Convert to (x1, y1, x2, y2) format for PyTorch
-                    img_width, img_height = img.size
-                    x1 = (x_center - width/2) * img_width
-                    y1 = (y_center - height/2) * img_height
-                    x2 = (x_center + width/2) * img_width
-                    y2 = (y_center + height/2) * img_height
-                    
-                    boxes.append([x1, y1, x2, y2])
-                    labels.append(class_id)
+        # Read bounding boxes and class labels
+        with open(label_path, 'r') as f:
+            for line in f.readlines():
+                data = line.strip().split(' ')
+                class_id = int(data[0])
+                # YOLO format: (class_id, x_center, y_center, width, height) normalized
+                x_center, y_center, width, height = map(float, data[1:5])
+                
+                # Skip boxes with zero width or height
+                if width <= 0 or height <= 0:
+                    continue
+                
+                # Convert to (x1, y1, x2, y2) format for PyTorch
+                img_width, img_height = img.size
+                x1 = (x_center - width/2) * img_width
+                y1 = (y_center - height/2) * img_height
+                x2 = (x_center + width/2) * img_width
+                y2 = (y_center + height/2) * img_height
+                
+                # Ensure the box has positive width and height
+                if x2 <= x1 or y2 <= y1:
+                    continue
+                
+                # Apply minimum width and height (1 pixel)
+                x2 = max(x2, x1 + 1.0)
+                y2 = max(y2, y1 + 1.0)
+                
+                boxes.append([x1, y1, x2, y2])
+                labels.append(class_id)
         
+        # Skip images with no valid boxes
+        if len(boxes) == 0:
+            # Create a dummy box if no valid boxes are found
+            # This is just for training to continue, but we'll filter it out in train_one_epoch
+            boxes = [[0.0, 0.0, 1.0, 1.0]]
+            labels = [0]  # Background class
+            
         # Convert to tensors
         boxes = torch.as_tensor(boxes, dtype=torch.float32)
         labels = torch.as_tensor(labels, dtype=torch.int64)
         image_id = torch.tensor([idx])
-        area = (boxes[:, 3] - boxes[:, 1]) * (boxes[:, 2] - boxes[:, 0]) if len(boxes) > 0 else torch.zeros((0,))
+        area = (boxes[:, 3] - boxes[:, 1]) * (boxes[:, 2] - boxes[:, 0])
         
         # Create target dictionary
         target = {}
@@ -86,6 +120,7 @@ class DeerPartsDataset(Dataset):
         target["image_id"] = image_id
         target["area"] = area
         target["iscrowd"] = torch.zeros((len(boxes),), dtype=torch.int64)
+        target["is_dummy"] = torch.tensor([len(boxes) == 1 and labels[0] == 0])
         
         if self.transforms:
             img, target = self.transforms(img, target)
@@ -149,55 +184,108 @@ def train_one_epoch(model, optimizer, data_loader, device):
     num_batches = 0
     
     for images, targets in tqdm(data_loader):
+        # Skip dummy targets
+        valid_samples = True
+        for t in targets:
+            if "is_dummy" in t and t["is_dummy"].item():
+                valid_samples = False
+                break
+                
+            # Double-check box validity
+            boxes = t["boxes"]
+            if boxes.shape[0] == 0:
+                valid_samples = False
+                break
+                
+            # Check for invalid box dimensions
+            widths = boxes[:, 2] - boxes[:, 0]
+            heights = boxes[:, 3] - boxes[:, 1]
+            if (widths <= 0).any() or (heights <= 0).any():
+                valid_samples = False
+                break
+        
+        if not valid_samples:
+            continue
+        
         images = list(image.to(device) for image in images)
-        targets = [{k: v.to(device) for k, v in t.items()} for t in targets]
+        targets = [{k: v.to(device) for k, v in t.items() if k != "is_dummy"} for t in targets]
         
-        # In training mode, model returns a dict of losses
-        loss_dict = model(images, targets)
-        losses = sum(loss for loss in loss_dict.values())
+        # Forward pass
+        try:
+            loss_dict = model(images, targets)
+            losses = sum(loss for loss in loss_dict.values())
+            
+            # Backward pass and optimization
+            optimizer.zero_grad()
+            losses.backward()
+            optimizer.step()
+            
+            epoch_loss += losses.item()
+            num_batches += 1
         
-        optimizer.zero_grad()
-        losses.backward()
-        optimizer.step()
-        
-        epoch_loss += losses.item()
-        num_batches += 1
+        except Exception as e:
+            print(f"Error in batch: {e}")
+            continue
     
-    return epoch_loss / num_batches if num_batches > 0 else 0
+    return epoch_loss / max(num_batches, 1)
 
 def evaluate(model, data_loader, device):
     """Evaluate the model"""
     model.eval()
-    
-    # For evaluation, we'll use our own loss calculation
-    from torch.nn.functional import cross_entropy
     
     val_loss = 0
     num_batches = 0
     
     with torch.no_grad():
         for images, targets in tqdm(data_loader):
+            # Skip dummy targets
+            valid_samples = True
+            for t in targets:
+                if "is_dummy" in t and t["is_dummy"].item():
+                    valid_samples = False
+                    break
+                    
+                # Double-check box validity
+                boxes = t["boxes"]
+                if boxes.shape[0] == 0:
+                    valid_samples = False
+                    break
+                    
+                # Check for invalid box dimensions
+                widths = boxes[:, 2] - boxes[:, 0]
+                heights = boxes[:, 3] - boxes[:, 1]
+                if (widths <= 0).any() or (heights <= 0).any():
+                    valid_samples = False
+                    break
+            
+            if not valid_samples:
+                continue
+                
             images = list(image.to(device) for image in images)
-            targets = [{k: v.to(device) for k, v in t.items()} for t in targets]
+            targets = [{k: v.to(device) for k, v in t.items() if k != "is_dummy"} for t in targets]
             
-            # In eval mode, model returns detection results
-            # So we need to compute the loss manually
-            outputs = model(images)
+            try:
+                # In eval mode, model returns detection results
+                outputs = model(images)
+                
+                # Calculate a simple loss (just for monitoring)
+                batch_loss = 0
+                for i, target in enumerate(targets):
+                    if len(target['boxes']) > 0 and len(outputs[i]['boxes']) > 0:
+                        # Add a simple loss based on the detection scores
+                        batch_loss += (1.0 - outputs[i]['scores'].mean()).item()
+                    else:
+                        # Add a penalty if no detections
+                        batch_loss += 1.0
+                
+                val_loss += batch_loss
+                num_batches += 1
             
-            # Calculate a simple loss (just for monitoring)
-            batch_loss = 0
-            for i, target in enumerate(targets):
-                if len(target['boxes']) > 0 and len(outputs[i]['boxes']) > 0:
-                    # Add a simple loss based on the detection scores
-                    batch_loss += (1.0 - outputs[i]['scores'].mean()).item()
-                else:
-                    # Add a penalty if no detections
-                    batch_loss += 1.0
-            
-            val_loss += batch_loss
-            num_batches += 1
+            except Exception as e:
+                print(f"Error in validation batch: {e}")
+                continue
     
-    return val_loss / num_batches if num_batches > 0 else 0
+    return val_loss / max(num_batches, 1)
 
 def predict_image(model, image_path, class_names, device, score_threshold=0.5):
     """
@@ -277,12 +365,17 @@ def train_model(epochs=10, batch_size=2, learning_rate=0.005):
     
     # Create data loaders
     train_loader = DataLoader(
-        train_dataset, batch_size=batch_size, shuffle=True, 
-        collate_fn=lambda x: tuple(zip(*x))
+        train_dataset, 
+        batch_size=batch_size, 
+        shuffle=True, 
+        collate_fn=lambda x: tuple(zip(*x)),
+        drop_last=True  # Drop the last incomplete batch
     )
     
     val_loader = DataLoader(
-        val_dataset, batch_size=1, shuffle=False,
+        val_dataset, 
+        batch_size=1, 
+        shuffle=False,
         collate_fn=lambda x: tuple(zip(*x))
     )
     
@@ -317,6 +410,18 @@ def train_model(epochs=10, batch_size=2, learning_rate=0.005):
         val_loss = evaluate(model, val_loader, device)
         val_losses.append(val_loss)
         print(f"Validation Loss: {val_loss:.4f}")
+        
+        # Save checkpoint after each epoch
+        checkpoint_path = os.path.join(output_dir, f"deer_parts_detector_epoch_{epoch+1}.pth")
+        torch.save({
+            'epoch': epoch + 1,
+            'model_state_dict': model.state_dict(),
+            'optimizer_state_dict': optimizer.state_dict(),
+            'train_loss': train_loss,
+            'val_loss': val_loss,
+            'classes': dataset.classes
+        }, checkpoint_path)
+        print(f"Checkpoint saved to {checkpoint_path}")
     
     # Save the final model
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
@@ -325,7 +430,7 @@ def train_model(epochs=10, batch_size=2, learning_rate=0.005):
         'model_state_dict': model.state_dict(),
         'classes': dataset.classes
     }, model_path)
-    print(f"Model saved to {model_path}")
+    print(f"Final model saved to {model_path}")
     
     # Plot training and validation loss
     plt.figure(figsize=(10, 5))
@@ -387,13 +492,18 @@ def train_model_quick_test(sample_fraction=0.1, epochs=2, batch_size=4, learning
     
     # Create data loaders with smaller batch size
     train_loader = DataLoader(
-        train_dataset, batch_size=batch_size, shuffle=True, 
+        train_dataset, 
+        batch_size=batch_size, 
+        shuffle=True, 
         collate_fn=lambda x: tuple(zip(*x)),
-        num_workers=0  # Use single process to avoid overhead
+        num_workers=0,  # Use single process to avoid overhead
+        drop_last=True  # Drop the last incomplete batch
     )
     
     val_loader = DataLoader(
-        val_dataset, batch_size=1, shuffle=False,
+        val_dataset, 
+        batch_size=1, 
+        shuffle=False,
         collate_fn=lambda x: tuple(zip(*x)),
         num_workers=0  # Use single process to avoid overhead
     )
