@@ -66,6 +66,9 @@ export default function Scans() {
      localStorage.setItem("matchModelUrl", modelUrl);
      window.location.href = "/viewer";
    };
+   //ADD functions for buttons
+   //const handleDeleteClick = {}
+   //const handleRenameClick = {}
 
   return (
     <main className="bg-white min-h-screen font-[family-name:var(--font-geist-sans)]">

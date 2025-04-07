@@ -79,7 +79,7 @@ export default function UploadFile() {
           <img
             src={fileUrl}
             alt="Uploaded file preview"
-            className="max-w-full h-auto"
+            className="max-h-[170px]"
           />
         </div>
       )}
