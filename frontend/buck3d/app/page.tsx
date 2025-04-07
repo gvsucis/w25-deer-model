@@ -72,28 +72,30 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="bg-white min-h-screen flex flex-row items-start justify-between pt-12">
+    <div className="bg-white min-h-screen flex flex-row">
       {/* Info Section */}
-      <div className="bg-orange-500 text-white whitespace-nowrap p-6 mt-[120px] ml-6 max-w-lg shadow-lg rounded-lg">
+      <div className="absolute left-6 bg-orange-500 text-white text-xl border-black border-4 whitespace-nowrap p-6 mt-[120px] w-[650px] h-[450px] shadow-lg rounded-lg">
         <p className="mb-2 font-bold">1. Upload a photo of your buck</p>
-        <p className="mb-2 font-bold">2. View the 3D model of your antlers</p>
+        <p className="mb-2 font-bold">2. View the 3D model of your antlers and its attributes</p>
         <p className="mb-2 font-bold">3. Purchase a 3D printed replica or taxidermy</p>
         <div className="flex justify-center items-center gap-2 mt-4">
           <Image
             src="/whitetail-deer-.jpg"
-            width={200}
+            width={275}
             height={200}
             alt="Buck"
+            className="border-black border-2"
           />
           <span className="text-2x1">→</span>
           <Image
             src="/3D_printed_photo.jpg"
-            width={200}
+            width={275}
             height={200}
             alt="Antlers"
+            className= "border-black border-2"
           />
         </div>
-        <p className="font-bold text-lg mt-4 text-center">
+        <p className="font-bold text-2xl mt-4 text-center">
           Subscription Available!
         </p>
       </div>
@@ -101,11 +103,11 @@ export default function Home() {
       {/* 3D Model */}
       <div
         ref={antlersRef}
-        className="w-full max-w-4xl mx-auto flex justify-center items-center"
+        className="justify-center items-center mx-auto"
       ></div>
 
       {/* Logo */}
-      <div className="bg-transparent mt-[120px] mr-6">
+      <div className="absolute right-6 bg-transparent mt-[120px]">
         <Image src="/logo.png" width={344} height={456} alt="Logo" />
       </div>
     </div>
