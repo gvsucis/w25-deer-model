@@ -71,8 +71,7 @@ export default function Scans() {
     <main className="bg-white min-h-screen font-[family-name:var(--font-geist-sans)]">
       <div className="grid grid-cols-[300px_1fr] gap-4 p-4 w-full pt-[120px]">
         {/*Upload file box*/}
-        <div className="flex flex-col items-center text-black text-lg justify-center box border-4 border-black bg-white p-1 h-[200px] w-[300px]">
-          <p>Upload Your Buck Photo Here</p>
+        <div className="flex flex-col items-center text-black text-lg justify-start box border-4 border-black bg-orange-500 p-1 h-[300px] w-[400px]">
           <UploadFile />
           {/*need to add action photo upload to cloud*/}
           {/* <form action="" className="text-sm p-3 space-y-12">
@@ -93,28 +92,40 @@ export default function Scans() {
       <div className="text-black text-2xl font-bold pb-6 ml-6">
         Previous Scans
       </div>
-      <div className="grid grid-cols-5 gap-10 w-full justify-evenly ml-6 mr-6 text-center">
+      <div className=" grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 ml-6 mr-6 gap-6">
         {scans.length > 0 ? (
           scans.map((scan, index) => (
             <div
               key={scan.scanid}
-              className="relative rounded-lg w-32 h-32 border-4 border-black overflow-hidden"
+              className="relative rounded-lg w-full h-64 border-4 mb-6 border-black overflow-hidden"
             >
               <img
                 src={scan.url}
                 alt={`Scan ${index + 1}`}
-                className="object-cover w-full h-full"
+                className="items-start object-cover w-full h-[215px] border-b-4 border-black"
               />
               <a
-                className="absolute bottom-2 right-2 rounded-full bg-orange-500 transition-colors flex items-center justify-center text-black hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm h-5 w-12 px-4"
+                className="absolute bottom-2 left-[155px] rounded-full bg-orange-500 transition-colors flex items-center justify-center text-black font-medium hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm h-5 w-12 px-3"
                 onClick={() => handleViewClick(scan)}
               >
                 View
               </a>
+              <a
+                className="absolute bottom-2 left-2 rounded-full bg-black transition-colors flex items-center justify-center text-white font-medium hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm h-5 w-auto px-3"
+                //onclick
+              >
+                Delete
+              </a>
+              <a
+                className="absolute bottom-2 left-[80px] rounded-full bg-blue-500 transition-colors flex items-center justify-center text-black font-medium hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm h-5 w-auto px-2"
+                //onclick
+              >
+                Rename
+              </a>
             </div>
           ))
         ) : (
-          <p className="col-span-5 text-black">No scans available yet.</p>
+          <p className="m-6 text-black">No scans available yet.</p>
         )}
       </div>
     </main>
