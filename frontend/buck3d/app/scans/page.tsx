@@ -9,6 +9,7 @@ interface Scan {
   userid: string;
   url: string;
   createdAt: string;
+  name: string;
 }
 interface Match {
   scanid: string;
@@ -27,48 +28,69 @@ export default function Scans() {
         .then((response) => setScans(response.data))
         .catch((error) => console.error("internal eror", error));
 
-       axios
-         .get(`http://localhost:8000/api/matches?userid=${session.user.id}`)
-         .then((res) => setMatches(res.data))
-         .catch((err) => console.error("match fetch error", err));
+      axios
+        .get(`http://localhost:8000/api/matches?userid=${session.user.id}`)
+        .then((res) => setMatches(res.data))
+        .catch((err) => console.error("match fetch error", err));
     }
   }, [status, session]);
 
-   const handleViewClick = async (scan: Scan) => {
-     localStorage.setItem("scanid", scan.scanid);
-     localStorage.setItem("scanurl", scan.url);
+  const handleViewClick = async (scan: Scan) => {
+    localStorage.setItem("scanurl", scan.url);
+    localStorage.setItem("scanname", scan.name || "Unnamed Scan"); // Save name
 
-     const existingMatch = matches.find((m) => m.scanid === scan.scanid);
+    const existingMatch = matches.find((m) => m.scanid === scan.scanid);
 
-     let modelUrl: string;
+    let modelUrl: string;
 
-     if (existingMatch) {
-       // Use existing matchid
-       modelUrl = `https://buckview3d.s3.us-east-1.amazonaws.com/3dmodels/${existingMatch.matchid}.stl`;
-     } else {
-       try {
-         const response = await axios.post(
-           "http://localhost:8000/api/match-antler",
-           {
-             scanid: scan.scanid,
-             userid: session?.user?.id,
-             fileUrl: scan.url,
-           }
-         );
+    if (existingMatch) {
+      // Use existing matchid
+      modelUrl = `https://buckview3d.s3.us-east-1.amazonaws.com/3dmodels/${existingMatch.matchid}.stl`;
+    } else {
+      try {
+        const response = await axios.post(
+          "http://localhost:8000/api/match-antler",
+          {
+            scanid: scan.scanid,
+            userid: session?.user?.id,
+            fileUrl: scan.url,
+          }
+        );
 
-         modelUrl = response.data.modelUrl;
-       } catch (error) {
-         console.error("Error generating 3D match:", error);
-         return;
-       }
-     }
+        modelUrl = response.data.modelUrl;
+      } catch (error) {
+        console.error("Error generating 3D match:", error);
+        return;
+      }
+    }
 
-     localStorage.setItem("matchModelUrl", modelUrl);
-     window.location.href = "/viewer";
-   };
-   //ADD functions for buttons
-   //const handleDeleteClick = {}
-   //const handleRenameClick = {}
+    localStorage.setItem("matchModelUrl", modelUrl);
+    window.location.href = "/viewer";
+  };
+  //ADD functions for buttons
+  //const handleDeleteClick = {}
+  const handleRenameClick = async (scan: Scan) => {
+    const newName = prompt("Enter a new name for this scan:", scan.name || "");
+    if (!newName || newName.trim() === "") return;
+  
+    try {
+      const response = await axios.patch(
+        `http://localhost:8000/api/scans?userid=${session?.user?.id}&scanid=${scan.scanid}`,
+        { name: newName }
+      );
+  
+      if (response.status === 200) {
+        setScans((prev) =>
+          prev.map((s) =>
+            s.scanid === scan.scanid ? { ...s, name: newName } : s
+          )
+        );
+      }
+    } catch (err) {
+      console.error("Rename failed", err);
+      alert("Could not rename scan.");
+    }
+  };
 
   return (
     <main className="bg-white min-h-screen font-[family-name:var(--font-geist-sans)]">
@@ -121,7 +143,7 @@ export default function Scans() {
               </a>
               <a
                 className="absolute bottom-2 left-[80px] rounded-full bg-blue-500 transition-colors flex items-center justify-center text-black font-medium hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm h-5 w-auto px-2"
-                //onclick
+                onClick={() => handleRenameClick(scan)}
               >
                 Rename
               </a>
