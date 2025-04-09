@@ -122,7 +122,7 @@ export default function Scans() {
           scans.map((scan, index) => (
             <div
               key={scan.scanid}
-              className="relative rounded-lg w-full h-64 border-4 mb-6 border-black overflow-hidden"
+              className="relative rounded-lg w-full h-[275px] border-4 mb-6 border-black overflow-hidden"
             >
               <img
                 src={scan.url}
@@ -147,6 +147,7 @@ export default function Scans() {
               >
                 Rename
               </a>
+              <p className="text-black text-sm font-medium pl-2"> Name: {scan.name ? scan.name : 'null'}</p>
             </div>
           ))
         ) : (
