@@ -147,7 +147,7 @@ export default function Scans() {
               >
                 Rename
               </a>
-              <p className="text-black text-sm font-medium pl-2"> Name: {scan.name ? scan.name : 'null'}</p>
+              <p className="text-black text-sm font-medium pl-2"> Name: {scan.name ? scan.name : 'Unnamed Scan'}</p>
             </div>
           ))
         ) : (
