@@ -14,12 +14,12 @@ export default function Services() {
 
   const sendEmail = () => {
     emailjs.send(
-      'service_s752vvc',
-      'template_yt796jk',
+      'service_s752vvc', // REPLACE WITH YOUR SERVICE ID
+      'template_yt796jk', // REPLACE WITH YOUR TEMPLATE ID
       {
         message: `Service Type: ${serviceType.join(", ")}\nPrice: $$$`,
       },
-      'k7AWvwMDUA2tyGYhb'
+      'k7AWvwMDUA2tyGYhb' // REPLACE WITH YOUR USER API KEY
     ).then((response) => {
       console.log('Email sent successfully!', response.status, response.text);
     }).catch((err) => {
