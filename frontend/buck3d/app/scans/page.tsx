@@ -67,8 +67,23 @@ export default function Scans() {
     localStorage.setItem("matchModelUrl", modelUrl);
     window.location.href = "/viewer";
   };
-  //ADD functions for buttons
-  //const handleDeleteClick = {}
+
+  // NOTE: Make sure to delete from the S3 bucket as well with what ever key you use
+  const handleDeleteClick = async (scan: Scan) => {
+    const confirmDelete = window.confirm(`Are you sure you want to delete "${scan.name || 'this scan'}"?`);
+  
+    if (!confirmDelete) return;
+  
+    try {
+      await axios.delete(`http://localhost:8000/api/scans?userid=${session?.user?.id}&scanid=${scan.scanid}`);
+      // Optionally update the UI after deletion
+      setScans((prev) => prev.filter((s) => s.scanid !== scan.scanid));
+    } catch (error) {
+      console.error("Error deleting scan:", error);
+      alert("Failed to delete scan. Please try again.");
+    }
+  };
+
   const handleRenameClick = async (scan: Scan) => {
     const newName = prompt("Enter a new name for this scan:", scan.name || "");
     if (!newName || newName.trim() === "") return;
@@ -137,7 +152,7 @@ export default function Scans() {
               </a>
               <a
                 className="absolute bottom-2 left-2 rounded-full bg-black transition-colors flex items-center justify-center text-white font-medium hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm h-5 w-auto px-3"
-                //onclick
+                onClick={() => handleDeleteClick(scan)}
               >
                 Delete
               </a>

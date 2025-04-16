@@ -85,6 +85,19 @@ def rename_scan(userid: str, scanid: str, data: RenameScan):
         print("Rename error:", e)
         raise HTTPException(status_code=500, detail=f"Failed to rename scan: {str(e)}")
 
+@app.delete("/api/scans")
+def delete_scan(userid: str, scanid: str):
+    try:
+        cur.execute(
+            'DELETE FROM "Scan2D" WHERE "scanid" = %s AND "userid" = %s;',
+            (scanid, userid)
+        )
+        conn.commit()
+        return {"message": "Scan deleted successfully"}
+    except Exception as e:
+        print("Error deleting scan:", e)
+        return JSONResponse(status_code=500, content={"message": "Failed to delete scan"})
+
 @app.post("/api/match-antler")
 async def match_antler_via_url(data: dict):
     userid = data.get("userid")
