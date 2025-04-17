@@ -1,7 +1,8 @@
 frontend/node_modules
 backend/venv
 __pycache__/
+/node_modules
+backend/RecognitionModel/imageprocessing/depth_maps
+backend/RecognitionModel/imageprocessing/tine_dataset
 node_modules
 frontend/buck3d/prisma
-/node_modules
-
