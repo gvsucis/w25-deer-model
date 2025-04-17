@@ -1,4 +1,7 @@
 frontend/node_modules
 backend/venv
 __pycache__/
+node_modules
+frontend/buck3d/prisma
 /node_modules
+

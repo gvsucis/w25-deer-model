@@ -1,3 +1,6 @@
 /recognitionmodel/test
 /recognitionmodel/imageprocessing/3dantlers
 /recognitionmodel/imageprocessing/depth_maps
+/ScoringModel/recognitionmodel/imageprocessing/depth_maps
+
+/ScoringModel/antlerScore.v3i.yolov8
