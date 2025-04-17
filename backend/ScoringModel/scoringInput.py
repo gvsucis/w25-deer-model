@@ -15,7 +15,6 @@ def load_model(model_path=None, device=None):
     if device is None:
         device = torch.device('cuda') if torch.cuda.is_available() else torch.device('cpu')
     
-    # If model_path is not specified, find the latest model
     if model_path is None:
         script_dir = os.path.dirname(os.path.abspath(__file__))
         models_dir = os.path.join(script_dir, "models")
@@ -27,7 +26,7 @@ def load_model(model_path=None, device=None):
         if not model_files:
             raise FileNotFoundError(f"No model files found in {models_dir}")
         
-        # If there are checkpoint files, prefer the final model if it exists
+        # current trained model
         final_models = [f for f in model_files if not f.startswith("deer_parts_detector_epoch_10")]
         if final_models:
             model_path = os.path.join(models_dir, max(final_models, key=lambda x: os.path.getmtime(os.path.join(models_dir, x))))
@@ -37,34 +36,27 @@ def load_model(model_path=None, device=None):
     
     print(f"Loading model from: {model_path}")
     
-    # Load checkpoint
     checkpoint = torch.load(model_path, map_location=device)
     
-    # Get classes
     if 'classes' in checkpoint:
         classes = checkpoint['classes']
         print(f"Found {len(classes)} classes in model: {classes}")
     else:
-        # Default classes if not saved with model
-        classes = ['antler', 'ear', 'eye', 'nose', 'forehead']
+        classes = ['']
         print(f"No classes found in model, using defaults: {classes}")
     
-    # Build model with correct number of classes
-    num_classes = len(classes) + 1  # Add background
+    num_classes = len(classes) + 1  
     model = fasterrcnn_resnet50_fpn(pretrained=False)
-    
-    # Replace classifier with the right number of classes
     in_features = model.roi_heads.box_predictor.cls_score.in_features
     model.roi_heads.box_predictor = FastRCNNPredictor(in_features, num_classes)
     
-    # Load weights
     if 'model_state_dict' in checkpoint:
         model.load_state_dict(checkpoint['model_state_dict'])
     else:
         model.load_state_dict(checkpoint)
     
     model.to(device)
-    model.eval()  # Set model to evaluation mode
+    model.eval()  
     
     return model, ['background'] + classes
 
@@ -87,21 +79,15 @@ def detect_deer_parts(model, image, class_names, device=None, score_threshold=0.
     
     print(f"Running detection on device: {device}")
     
-    # Handle input which could be either a path or a PIL Image
     if isinstance(image, str):
-        # It's a path to an image
         if not os.path.exists(image):
             raise FileNotFoundError(f"Image not found: {image}")
         image = Image.open(image).convert("RGB")
         print(f"Loaded image with size: {image.size}")
     elif not isinstance(image, Image.Image):
         raise TypeError("Image must be a PIL Image object or a path to an image file")
-    
-    # Convert to tensor and move to device
     transform = torchvision.transforms.ToTensor()
     img_tensor = transform(image).unsqueeze(0).to(device)
-    
-    # Run inference
     with torch.no_grad():
         try:
             predictions = model(img_tensor)
@@ -129,48 +115,31 @@ def detect_deer_parts(model, image, class_names, device=None, score_threshold=0.
             class_name = class_names[label_idx]
             print(f"  {i}: {class_name} (score: {score:.4f}) at {box}")
     
-    # Draw detections on the image
     result_img = image.copy()
     draw = ImageDraw.Draw(result_img)
-    
-    # Try to get a font
     try:
         font = ImageFont.truetype("arial.ttf", 16)
     except:
         font = ImageFont.load_default()
-    
-    # Create a list to store detection results
     detections = []
-    
-    # Use different colors for different classes
     colors = [
         "red", "blue", "green", "orange", "purple", 
         "cyan", "magenta", "yellow", "brown", "pink"
     ]
-    
-    # Draw bounding boxes and labels for detections above threshold
     for i, (box, score, label_idx) in enumerate(zip(boxes, scores, labels)):
         if score >= score_threshold:
             # Convert box coordinates to integers
             box = box.astype(np.int32)
             x1, y1, x2, y2 = box
-            
-            # Get class name
             class_name = class_names[label_idx]
-            
-            # Choose color based on class
             color_idx = label_idx % len(colors)
             color = colors[color_idx]
-            
-            # Draw bounding box
-            draw.rectangle([(x1, y1), (x2, y2)], outline=color, width=3)
+            draw.rectangle([(x1, y1), (x2, y2)], outline=color, width=1)
             
             # Draw label with score
-            text = f"{class_name}: {score:.2f}"
-            draw.rectangle([(x1, y1-20), (x1 + 100, y1)], fill=color)
-            draw.text((x1, y1-20), text, fill="white", font=font)
-            
-            # Add to detections list
+            text = f"{class_name}: {score:.1f}"
+            draw.rectangle([(x1, y1-15), (x1 + 80, y1)], fill=color)
+            draw.text((x1, y1-15), text, fill="white", font=font)
             detections.append({
                 'class': class_name,
                 'score': float(score),
@@ -185,14 +154,10 @@ def visualize_detections(image, detections, output_path=None):
     plt.figure(figsize=(12, 8))
     plt.imshow(image)
     plt.axis('off')
-    
-    # Count detections by class
     class_counts = {}
     for det in detections:
         cls = det['class']
         class_counts[cls] = class_counts.get(cls, 0) + 1
-    
-    # Create title
     title = "Detected deer parts:\n"
     for cls, count in class_counts.items():
         title += f"{cls}: {count}, "
@@ -209,35 +174,23 @@ def visualize_detections(image, detections, output_path=None):
 
 # When this script is run directly, use the test image
 if __name__ == "__main__":
-    # Hard-coded test image
     script_dir = os.path.dirname(os.path.abspath(__file__))
     test_image_path = os.path.join(script_dir, "test2score.jpg")
     
     try:
-        # Check if the test image exists
         if not os.path.exists(test_image_path):
             print(f"Test image not found: {test_image_path}")
             print("Please place 'testScore.webp' in the same directory as this script.")
             exit(1)
-            
-        # Load model - explicitly printing which model is loaded
         print("Loading model...")
         model, class_names = load_model()
-        
-        # Process image with a lower threshold to see more detections
         print(f"Processing test image: {test_image_path}")
         result_img, detections = detect_deer_parts(model, test_image_path, class_names, score_threshold=0.3)
-        
-        # Save result
         output_path = os.path.join(script_dir, "testScore_detected.jpg")
         result_img.save(output_path)
         print(f"Result saved to: {output_path}")
-        
-        # Also save a matplotlib visualization
         vis_path = os.path.join(script_dir, "testScore_visualization.jpg")
         visualize_detections(result_img, detections, vis_path)
-        
-        # Print detections
         print("\nDetections Summary:")
         for i, d in enumerate(detections):
             print(f"  {i+1}. {d['class']}: {d['score']:.2f} at {d['box']}")

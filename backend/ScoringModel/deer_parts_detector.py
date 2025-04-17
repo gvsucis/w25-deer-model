@@ -24,15 +24,12 @@ class DeerPartsDataset(Dataset):
     def __init__(self, root, transforms=None):
         self.root = root
         self.transforms = transforms
-        
-        # Load dataset paths
         self.imgs_path = os.path.join(root, "train", "images")
         self.labels_path = os.path.join(root, "train", "labels")
         
         if not os.path.exists(self.imgs_path) or not os.path.exists(self.labels_path):
             raise ValueError(f"Dataset directories not found: {self.imgs_path} or {self.labels_path}")
         
-        # Find images that have corresponding labels
         self.imgs = []
         self.valid_indices = []
         
@@ -42,13 +39,9 @@ class DeerPartsDataset(Dataset):
             img_id = os.path.splitext(img_file)[0]
             label_file = f"{img_id}.txt"
             label_path = os.path.join(self.labels_path, label_file)
-            
-            # Check if label file exists and is not empty
             if os.path.exists(label_path) and os.path.getsize(label_path) > 0:
                 self.imgs.append(img_file)
                 self.valid_indices.append(idx)
-        
-        # Get class names from data.yaml
         yaml_path = os.path.join(root, "data.yaml")
         with open(yaml_path, 'r') as f:
             data = yaml.safe_load(f)
@@ -59,41 +52,27 @@ class DeerPartsDataset(Dataset):
         print(f"Classes: {self.classes}")
 
     def __getitem__(self, idx):
-        # Load image
         img_path = os.path.join(self.imgs_path, self.imgs[idx])
         img = Image.open(img_path).convert("RGB")
-        
-        # Get corresponding label file
         img_id = os.path.splitext(self.imgs[idx])[0]
         label_path = os.path.join(self.labels_path, f"{img_id}.txt")
         
         boxes = []
         labels = []
-        
-        # Read bounding boxes and class labels
         with open(label_path, 'r') as f:
             for line in f.readlines():
                 data = line.strip().split(' ')
                 class_id = int(data[0])
-                # YOLO format: (class_id, x_center, y_center, width, height) normalized
                 x_center, y_center, width, height = map(float, data[1:5])
-                
-                # Skip boxes with zero width or height
                 if width <= 0 or height <= 0:
                     continue
-                
-                # Convert to (x1, y1, x2, y2) format for PyTorch
                 img_width, img_height = img.size
                 x1 = (x_center - width/2) * img_width
                 y1 = (y_center - height/2) * img_height
                 x2 = (x_center + width/2) * img_width
-                y2 = (y_center + height/2) * img_height
-                
-                # Ensure the box has positive width and height
+                y2 = (y_center + height/2) * img_height   
                 if x2 <= x1 or y2 <= y1:
                     continue
-                
-                # Apply minimum width and height (1 pixel)
                 x2 = max(x2, x1 + 1.0)
                 y2 = max(y2, y1 + 1.0)
                 
@@ -102,18 +81,13 @@ class DeerPartsDataset(Dataset):
         
         # Skip images with no valid boxes
         if len(boxes) == 0:
-            # Create a dummy box if no valid boxes are found
-            # This is just for training to continue, but we'll filter it out in train_one_epoch
             boxes = [[0.0, 0.0, 1.0, 1.0]]
-            labels = [0]  # Background class
-            
-        # Convert to tensors
+            labels = [0]  
         boxes = torch.as_tensor(boxes, dtype=torch.float32)
         labels = torch.as_tensor(labels, dtype=torch.int64)
         image_id = torch.tensor([idx])
         area = (boxes[:, 3] - boxes[:, 1]) * (boxes[:, 2] - boxes[:, 0])
         
-        # Create target dictionary
         target = {}
         target["boxes"] = boxes
         target["labels"] = labels
@@ -166,11 +140,8 @@ def get_transform(train):
 
 def build_model(num_classes, pretrained=True):
     """Build a Faster R-CNN model"""
-    # For quick testing, we can use a smaller backbone
     model = fasterrcnn_resnet50_fpn(pretrained=pretrained, 
                                    trainable_backbone_layers=3)  # Freeze early layers to train faster
-    
-    # Replace the classifier
     in_features = model.roi_heads.box_predictor.cls_score.in_features
     model.roi_heads.box_predictor = FastRCNNPredictor(in_features, num_classes)
     
@@ -184,20 +155,16 @@ def train_one_epoch(model, optimizer, data_loader, device):
     num_batches = 0
     
     for images, targets in tqdm(data_loader):
-        # Skip dummy targets
+        # Skip dummy targets defined earlier with the 0,0 boxes
         valid_samples = True
         for t in targets:
             if "is_dummy" in t and t["is_dummy"].item():
                 valid_samples = False
                 break
-                
-            # Double-check box validity
             boxes = t["boxes"]
             if boxes.shape[0] == 0:
                 valid_samples = False
                 break
-                
-            # Check for invalid box dimensions
             widths = boxes[:, 2] - boxes[:, 0]
             heights = boxes[:, 3] - boxes[:, 1]
             if (widths <= 0).any() or (heights <= 0).any():
@@ -238,14 +205,12 @@ def evaluate(model, data_loader, device):
     
     with torch.no_grad():
         for images, targets in tqdm(data_loader):
-            # Skip dummy targets
             valid_samples = True
             for t in targets:
                 if "is_dummy" in t and t["is_dummy"].item():
                     valid_samples = False
                     break
                     
-                # Double-check box validity
                 boxes = t["boxes"]
                 if boxes.shape[0] == 0:
                     valid_samples = False
@@ -268,11 +233,10 @@ def evaluate(model, data_loader, device):
                 # In eval mode, model returns detection results
                 outputs = model(images)
                 
-                # Calculate a simple loss (just for monitoring)
+                # Calculate a simple loss - testing for later developers
                 batch_loss = 0
                 for i, target in enumerate(targets):
                     if len(target['boxes']) > 0 and len(outputs[i]['boxes']) > 0:
-                        # Add a simple loss based on the detection scores
                         batch_loss += (1.0 - outputs[i]['scores'].mean()).item()
                     else:
                         # Add a penalty if no detections
@@ -630,15 +594,11 @@ if __name__ == "__main__":
             print("Available commands: train, quick-test")
     else:
         # Example usage for inference
-        print("Loading model for inference.")
         print("Use 'python deer_parts_detector.py train' for full training")
         print("Use 'python deer_parts_detector.py quick-test' for a quick test training")
         
         try:
             model, class_names = load_model()
-            print(f"Model loaded successfully. Available classes: {class_names[1:]}")
-            print("You can now use this model in your application.")
         except FileNotFoundError as e:
             print(f"Error: {e}")
-            print("Please train a model first using 'python deer_parts_detector.py train'")
-            print("or run a quick test with 'python deer_parts_detector.py quick-test'")
+            print("train a model first")
