@@ -6,17 +6,18 @@ import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import { STLLoader } from "three/examples/jsm/loaders/STLLoader";
 
 export default function Viewer() {
-  const [scanid, setScanid] = useState("");
   const [modelUrl, setModelUrl] = useState<string | null>(null);
+  const [scanName, setScanName] = useState("Unnamed Scan"); // Add state for scan name
 
   const antlersRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     // Run only on the client
-    const storedScanId = localStorage.getItem("scanid");
     const storedModelUrl = localStorage.getItem("matchModelUrl");
-    if (storedScanId) setScanid(storedScanId);
+    const storedScanName = localStorage.getItem("scanname") || "Unnamed Scan";
+
     if (storedModelUrl) setModelUrl(storedModelUrl);
+    if (storedScanName) setScanName(storedScanName); // Set the scan name state
   }, []);
 
   useEffect(() => {
@@ -80,7 +81,7 @@ export default function Viewer() {
     <div className="bg-white">
       <div className="justify-start" ref={antlersRef}></div>
       <div className="items-start justify-end flex flex-col text-xl text-black font-semibold p-4">
-        <div>Current File: {scanid}</div>
+        <div>Current File: {scanName}</div>
         <div>Pope &amp; Young Score: (placeholder)</div>
         <div>Boone &amp; Crockett Score: (placeholder)</div>
       </div>
