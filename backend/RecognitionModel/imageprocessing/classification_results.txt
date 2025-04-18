@@ -1,0 +1,948 @@
+Antler10F_antler10F_angle180_466.png: Not Tine (Confidence: 73.99%) - Correct
+Antler10F_antler10F_angle180_470.png: Tine (Confidence: 99.53%) - Correct
+Antler11F_antler11F_angle0_369.png: Tine (Confidence: 99.60%) - Correct
+Antler11F_antler11F_angle270_403.png: Tine (Confidence: 95.82%) - Correct
+Antler11F_antler11F_angle315_287.png: Tine (Confidence: 98.54%) - Correct
+Antler11F_antler11F_angle315_421.png: Tine (Confidence: 99.93%) - Correct
+Antler11F_antler11F_angle90_122.png: Tine (Confidence: 99.47%) - Correct
+Antler11F_antler11F_angle90_84.png: Tine (Confidence: 99.80%) - Correct
+Antler12F_antler12F_angle0_394.png: Tine (Confidence: 99.98%) - Correct
+Antler12F_antler12F_angle135_257.png: Tine (Confidence: 94.47%) - Correct
+Antler12F_antler12F_angle225_392.png: Tine (Confidence: 99.96%) - Correct
+Antler12F_antler12F_angle270_348.png: Tine (Confidence: 100.00%) - Correct
+Antler12F_antler12F_angle45_240.png: Tine (Confidence: 99.73%) - Correct
+Antler12F_antler12F_angle45_315.png: Tine (Confidence: 99.85%) - Correct
+Antler12F_antler12F_angle90_453.png: Tine (Confidence: 100.00%) - Correct
+Antler13F_antler13F_angle135_475.png: Tine (Confidence: 99.99%) - Correct
+Antler13F_antler13F_angle180_415.png: Tine (Confidence: 99.96%) - Correct
+Antler13F_antler13F_angle225_377.png: Tine (Confidence: 100.00%) - Correct
+Antler13F_antler13F_angle270_327.png: Tine (Confidence: 99.87%) - Correct
+Antler13F_antler13F_angle270_399.png: Tine (Confidence: 79.97%) - Correct
+Antler13F_antler13F_angle45_472.png: Tine (Confidence: 88.32%) - Correct
+Antler13F_antler13F_angle45_550.png: Tine (Confidence: 100.00%) - Correct
+Antler14F_antler14F_angle315_542.png: Not Tine (Confidence: 87.21%) - Correct
+Antler15F_antler15F_angle0_396.png: Tine (Confidence: 99.41%) - Correct
+Antler15F_antler15F_angle0_444.png: Tine (Confidence: 99.96%) - Correct
+Antler15F_antler15F_angle225_553.png: Tine (Confidence: 99.99%) - Correct
+Antler15F_antler15F_angle270_399.png: Tine (Confidence: 99.37%) - Correct
+Antler15F_antler15F_angle45_353.png: Tine (Confidence: 99.93%) - Correct
+Antler15F_antler15F_angle45_369.png: Tine (Confidence: 99.96%) - Correct
+Antler15F_antler15F_angle90_301.png: Tine (Confidence: 97.97%) - Correct
+Antler15F_antler15F_angle90_559.png: Tine (Confidence: 99.96%) - Correct
+Antler16F_antler16F_angle0_577.png: Tine (Confidence: 99.97%) - Correct
+Antler16F_antler16F_angle0_601.png: Tine (Confidence: 99.99%) - Correct
+Antler16F_antler16F_angle225_761.png: Tine (Confidence: 100.00%) - Correct
+Antler16F_antler16F_angle225_767.png: Tine (Confidence: 99.99%) - Correct
+Antler16F_antler16F_angle315_318.png: Tine (Confidence: 99.38%) - Correct
+Antler16F_antler16F_angle315_389.png: Tine (Confidence: 99.21%) - Correct
+Antler16F_antler16F_angle45_486.png: Tine (Confidence: 99.95%) - Correct
+Antler16F_antler16F_angle45_527.png: Tine (Confidence: 99.98%) - Correct
+Antler16F_antler16F_angle45_541.png: Tine (Confidence: 100.00%) - Correct
+Antler16F_antler16F_angle45_546.png: Tine (Confidence: 99.99%) - Correct
+Antler16F_antler16F_angle45_548.png: Tine (Confidence: 99.98%) - Correct
+Antler17F_antler17F_angle0_357.png: Tine (Confidence: 99.50%) - Correct
+Antler17F_antler17F_angle0_377.png: Tine (Confidence: 99.56%) - Correct
+Antler17F_antler17F_angle225_359.png: Tine (Confidence: 63.57%) - Correct
+Antler17F_antler17F_angle315_164.png: Tine (Confidence: 99.75%) - Correct
+Antler17F_antler17F_angle315_357.png: Tine (Confidence: 98.40%) - Correct
+Antler17F_antler17F_angle45_420.png: Tine (Confidence: 93.24%) - Correct
+Antler17F_antler17F_angle45_497.png: Tine (Confidence: 99.84%) - Correct
+Antler18F_antler18F_angle180_235.png: Tine (Confidence: 72.50%) - Correct
+Antler18F_antler18F_angle180_348.png: Tine (Confidence: 100.00%) - Correct
+Antler18F_antler18F_angle270_143.png: Not Tine (Confidence: 60.17%) - Correct
+Antler18F_antler18F_angle270_177.png: Tine (Confidence: 98.27%) - Correct
+Antler18F_antler18F_angle315_231.png: Tine (Confidence: 99.94%) - Correct
+Antler19F_antler19F_angle135_527.png: Tine (Confidence: 100.00%) - Correct
+Antler19F_antler19F_angle270_369.png: Tine (Confidence: 92.87%) - Correct
+Antler19F_antler19F_angle270_421.png: Tine (Confidence: 57.42%) - Correct
+Antler19F_antler19F_angle270_429.png: Tine (Confidence: 68.94%) - Correct
+Antler19F_antler19F_angle270_480.png: Tine (Confidence: 90.45%) - Correct
+Antler19F_antler19F_angle270_554.png: Tine (Confidence: 99.99%) - Correct
+Antler19F_antler19F_angle315_214.png: Tine (Confidence: 61.65%) - Correct
+Antler19F_antler19F_angle315_229.png: Tine (Confidence: 95.70%) - Correct
+Antler19F_antler19F_angle315_382.png: Tine (Confidence: 100.00%) - Correct
+Antler19F_antler19F_angle315_415.png: Tine (Confidence: 99.97%) - Correct
+Antler19F_antler19F_angle45_381.png: Tine (Confidence: 99.79%) - Correct
+Antler19F_antler19F_angle90_229.png: Tine (Confidence: 85.29%) - Correct
+Antler19F_antler19F_angle90_382.png: Tine (Confidence: 100.00%) - Correct
+Antler1F_antler1F_angle135_475.png: Tine (Confidence: 100.00%) - Correct
+Antler1F_antler1F_angle270_90.png: Tine (Confidence: 99.42%) - Correct
+Antler20F_antler20F_angle0_612.png: Tine (Confidence: 99.72%) - Correct
+Antler20F_antler20F_angle0_655.png: Tine (Confidence: 99.96%) - Correct
+Antler20F_antler20F_angle0_666.png: Tine (Confidence: 99.96%) - Correct
+Antler20F_antler20F_angle135_535.png: Tine (Confidence: 99.78%) - Correct
+Antler20F_antler20F_angle270_386.png: Not Tine (Confidence: 91.43%) - Correct
+Antler20F_antler20F_angle315_404.png: Tine (Confidence: 96.76%) - Correct
+Antler20F_antler20F_angle315_457.png: Tine (Confidence: 99.92%) - Correct
+Antler20F_antler20F_angle315_667.png: Tine (Confidence: 100.00%) - Correct
+Antler20F_antler20F_angle45_519.png: Tine (Confidence: 100.00%) - Correct
+Antler20F_antler20F_angle90_343.png: Tine (Confidence: 99.46%) - Correct
+Antler21F_antler21F_angle0_388.png: Tine (Confidence: 97.40%) - Correct
+Antler21F_antler21F_angle0_412.png: Not Tine (Confidence: 60.37%) - Correct
+Antler21F_antler21F_angle0_499.png: Tine (Confidence: 100.00%) - Correct
+Antler21F_antler21F_angle0_536.png: Tine (Confidence: 99.99%) - Correct
+Antler21F_antler21F_angle0_602.png: Tine (Confidence: 100.00%) - Correct
+Antler21F_antler21F_angle135_181.png: Tine (Confidence: 69.03%) - Correct
+Antler21F_antler21F_angle180_394.png: Tine (Confidence: 99.64%) - Correct
+Antler21F_antler21F_angle270_336.png: Tine (Confidence: 97.07%) - Correct
+Antler21F_antler21F_angle315_404.png: Tine (Confidence: 99.96%) - Correct
+Antler21F_antler21F_angle315_458.png: Tine (Confidence: 99.98%) - Correct
+Antler21F_antler21F_angle45_366.png: Tine (Confidence: 99.86%) - Correct
+Antler21F_antler21F_angle45_373.png: Tine (Confidence: 99.83%) - Correct
+Antler21F_antler21F_angle45_417.png: Tine (Confidence: 100.00%) - Correct
+Antler22F_antler22F_angle0_302.png: Tine (Confidence: 94.82%) - Correct
+Antler22F_antler22F_angle0_349.png: Tine (Confidence: 100.00%) - Correct
+Antler22F_antler22F_angle0_407.png: Tine (Confidence: 100.00%) - Correct
+Antler22F_antler22F_angle135_459.png: Tine (Confidence: 98.59%) - Correct
+Antler22F_antler22F_angle315_311.png: Tine (Confidence: 100.00%) - Correct
+Antler22F_antler22F_angle315_503.png: Tine (Confidence: 99.97%) - Correct
+Antler23F_antler23F_angle0_256.png: Tine (Confidence: 99.99%) - Correct
+Antler23F_antler23F_angle0_439.png: Tine (Confidence: 99.52%) - Correct
+Antler23F_antler23F_angle135_254.png: Tine (Confidence: 99.99%) - Correct
+Antler23F_antler23F_angle180_240.png: Not Tine (Confidence: 51.42%) - Correct
+Antler23F_antler23F_angle270_486.png: Tine (Confidence: 99.99%) - Correct
+Antler23F_antler23F_angle315_471.png: Tine (Confidence: 99.94%) - Correct
+Antler23F_antler23F_angle45_481.png: Tine (Confidence: 99.87%) - Correct
+Antler23F_antler23F_angle45_493.png: Tine (Confidence: 99.86%) - Correct
+Antler25F_antler25F_angle0_377.png: Tine (Confidence: 99.89%) - Correct
+Antler25F_antler25F_angle0_402.png: Tine (Confidence: 100.00%) - Correct
+Antler25F_antler25F_angle45_509.png: Tine (Confidence: 99.94%) - Correct
+Antler25F_antler25F_angle45_524.png: Tine (Confidence: 99.94%) - Correct
+Antler25F_antler25F_angle45_534.png: Tine (Confidence: 99.90%) - Correct
+Antler25F_antler25F_angle45_546.png: Tine (Confidence: 99.88%) - Correct
+Antler25F_antler25F_angle90_379.png: Tine (Confidence: 99.49%) - Correct
+Antler25F_antler25F_angle90_415.png: Tine (Confidence: 99.56%) - Correct
+Antler26F_antler26F_angle45_430.png: Tine (Confidence: 99.76%) - Correct
+Antler27F_antler27F_angle0_522.png: Tine (Confidence: 99.99%) - Correct
+Antler27F_antler27F_angle0_528.png: Tine (Confidence: 99.99%) - Correct
+Antler27F_antler27F_angle225_475.png: Tine (Confidence: 95.51%) - Correct
+Antler27F_antler27F_angle225_525.png: Tine (Confidence: 100.00%) - Correct
+Antler27F_antler27F_angle45_362.png: Tine (Confidence: 98.68%) - Correct
+Antler27F_antler27F_angle45_376.png: Tine (Confidence: 99.69%) - Correct
+Antler27F_antler27F_angle45_407.png: Tine (Confidence: 99.66%) - Correct
+Antler27F_antler27F_angle45_443.png: Tine (Confidence: 99.98%) - Correct
+Antler27F_antler27F_angle45_456.png: Tine (Confidence: 99.99%) - Correct
+Antler27F_antler27F_angle45_466.png: Tine (Confidence: 99.98%) - Correct
+Antler28F_antler28F_angle45_507.png: Tine (Confidence: 99.97%) - Correct
+Antler28F_antler28F_angle45_511.png: Tine (Confidence: 99.96%) - Correct
+Antler29F_antler29F_angle0_326.png: Tine (Confidence: 97.53%) - Correct
+Antler29F_antler29F_angle0_401.png: Tine (Confidence: 92.45%) - Correct
+Antler29F_antler29F_angle0_526.png: Tine (Confidence: 99.87%) - Correct
+Antler29F_antler29F_angle135_489.png: Tine (Confidence: 91.33%) - Correct
+Antler29F_antler29F_angle225_372.png: Tine (Confidence: 99.76%) - Correct
+Antler2F_antler2F_angle270_358.png: Tine (Confidence: 95.65%) - Correct
+Antler30F_antler30F_angle135_404.png: Tine (Confidence: 100.00%) - Correct
+Antler30F_antler30F_angle135_416.png: Tine (Confidence: 100.00%) - Correct
+Antler30F_antler30F_angle135_430.png: Tine (Confidence: 99.97%) - Correct
+Antler30F_antler30F_angle180_550.png: Tine (Confidence: 100.00%) - Correct
+Antler30F_antler30F_angle225_182.png: Tine (Confidence: 95.36%) - Correct
+Antler30F_antler30F_angle225_222.png: Tine (Confidence: 99.56%) - Correct
+Antler30F_antler30F_angle225_257.png: Tine (Confidence: 99.72%) - Correct
+Antler30F_antler30F_angle225_358.png: Tine (Confidence: 99.86%) - Correct
+Antler30F_antler30F_angle225_381.png: Tine (Confidence: 99.96%) - Correct
+Antler30F_antler30F_angle225_411.png: Tine (Confidence: 100.00%) - Correct
+Antler30F_antler30F_angle225_416.png: Tine (Confidence: 99.98%) - Correct
+Antler30F_antler30F_angle225_430.png: Tine (Confidence: 99.98%) - Correct
+Antler30F_antler30F_angle225_438.png: Tine (Confidence: 99.98%) - Correct
+Antler30F_antler30F_angle225_464.png: Tine (Confidence: 99.55%) - Correct
+Antler30F_antler30F_angle270_158.png: Tine (Confidence: 99.99%) - Correct
+Antler30F_antler30F_angle270_165.png: Tine (Confidence: 99.72%) - Correct
+Antler30F_antler30F_angle315_189.png: Tine (Confidence: 100.00%) - Correct
+Antler30F_antler30F_angle315_512.png: Tine (Confidence: 100.00%) - Correct
+Antler31F_antler31F_angle0_356.png: Tine (Confidence: 99.13%) - Correct
+Antler31F_antler31F_angle135_344.png: Tine (Confidence: 99.91%) - Correct
+Antler31F_antler31F_angle90_353.png: Tine (Confidence: 98.66%) - Correct
+Antler32F_antler32F_angle135_399.png: Tine (Confidence: 99.32%) - Correct
+Antler32F_antler32F_angle225_359.png: Tine (Confidence: 93.52%) - Correct
+Antler32F_antler32F_angle90_465.png: Tine (Confidence: 100.00%) - Correct
+Antler33F_antler33F_angle0_396.png: Tine (Confidence: 99.97%) - Correct
+Antler33F_antler33F_angle0_490.png: Tine (Confidence: 93.83%) - Correct
+Antler33F_antler33F_angle0_505.png: Tine (Confidence: 85.43%) - Correct
+Antler33F_antler33F_angle135_249.png: Not Tine (Confidence: 69.35%) - Correct
+Antler33F_antler33F_angle135_271.png: Not Tine (Confidence: 51.31%) - Correct
+Antler33F_antler33F_angle180_160.png: Not Tine (Confidence: 76.64%) - Correct
+Antler33F_antler33F_angle225_424.png: Tine (Confidence: 92.10%) - Correct
+Antler33F_antler33F_angle225_448.png: Tine (Confidence: 98.34%) - Correct
+Antler33F_antler33F_angle270_535.png: Tine (Confidence: 100.00%) - Correct
+Antler33F_antler33F_angle45_457.png: Tine (Confidence: 99.97%) - Correct
+Antler33F_antler33F_angle45_615.png: Tine (Confidence: 100.00%) - Correct
+Antler33F_antler33F_angle90_288.png: Tine (Confidence: 89.25%) - Correct
+Antler34F_antler34F_angle0_582.png: Tine (Confidence: 100.00%) - Correct
+Antler34F_antler34F_angle225_519.png: Tine (Confidence: 100.00%) - Correct
+Antler34F_antler34F_angle270_283.png: Not Tine (Confidence: 71.75%) - Correct
+Antler34F_antler34F_angle270_399.png: Tine (Confidence: 100.00%) - Correct
+Antler35F_antler35F_angle0_596.png: Tine (Confidence: 99.61%) - Correct
+Antler35F_antler35F_angle0_644.png: Tine (Confidence: 99.96%) - Correct
+Antler35F_antler35F_angle0_665.png: Tine (Confidence: 99.97%) - Correct
+Antler35F_antler35F_angle0_697.png: Tine (Confidence: 99.99%) - Correct
+Antler35F_antler35F_angle90_151.png: Tine (Confidence: 99.99%) - Correct
+Antler35F_antler35F_angle90_177.png: Tine (Confidence: 99.99%) - Correct
+Antler35F_antler35F_angle90_223.png: Tine (Confidence: 99.98%) - Correct
+Antler35F_antler35F_angle90_290.png: Tine (Confidence: 83.27%) - Correct
+Antler35F_antler35F_angle90_600.png: Tine (Confidence: 99.98%) - Correct
+Antler36F_antler36F_angle135_465.png: Tine (Confidence: 99.96%) - Correct
+Antler36F_antler36F_angle180_342.png: Tine (Confidence: 100.00%) - Correct
+Antler37F_antler37F_angle0_448.png: Tine (Confidence: 77.18%) - Correct
+Antler37F_antler37F_angle0_462.png: Tine (Confidence: 99.97%) - Correct
+Antler37F_antler37F_angle0_486.png: Tine (Confidence: 99.96%) - Correct
+Antler37F_antler37F_angle0_495.png: Tine (Confidence: 99.58%) - Correct
+Antler37F_antler37F_angle0_500.png: Tine (Confidence: 99.96%) - Correct
+Antler37F_antler37F_angle0_508.png: Tine (Confidence: 99.91%) - Correct
+Antler37F_antler37F_angle0_513.png: Tine (Confidence: 99.82%) - Correct
+Antler37F_antler37F_angle135_419.png: Tine (Confidence: 99.97%) - Correct
+Antler37F_antler37F_angle180_334.png: Tine (Confidence: 99.57%) - Correct
+Antler37F_antler37F_angle180_343.png: Tine (Confidence: 99.76%) - Correct
+Antler37F_antler37F_angle180_399.png: Tine (Confidence: 99.70%) - Correct
+Antler37F_antler37F_angle225_306.png: Tine (Confidence: 94.72%) - Correct
+Antler37F_antler37F_angle225_325.png: Tine (Confidence: 99.99%) - Correct
+Antler37F_antler37F_angle225_326.png: Tine (Confidence: 85.01%) - Correct
+Antler37F_antler37F_angle270_474.png: Tine (Confidence: 99.98%) - Correct
+Antler37F_antler37F_angle315_421.png: Tine (Confidence: 99.84%) - Correct
+Antler37F_antler37F_angle45_390.png: Tine (Confidence: 100.00%) - Correct
+Antler37F_antler37F_angle45_499.png: Tine (Confidence: 99.69%) - Correct
+Antler37F_antler37F_angle45_515.png: Tine (Confidence: 99.88%) - Correct
+Antler37F_antler37F_angle45_539.png: Tine (Confidence: 100.00%) - Correct
+Antler37F_antler37F_angle90_582.png: Tine (Confidence: 99.83%) - Correct
+Antler38F_antler38F_angle90_482.png: Tine (Confidence: 99.75%) - Correct
+Antler39F_antler39F_angle0_425.png: Tine (Confidence: 99.99%) - Correct
+Antler39F_antler39F_angle135_180.png: Tine (Confidence: 100.00%) - Correct
+Antler39F_antler39F_angle225_326.png: Tine (Confidence: 90.57%) - Correct
+Antler39F_antler39F_angle225_365.png: Tine (Confidence: 100.00%) - Correct
+Antler39F_antler39F_angle225_65.png: Tine (Confidence: 98.88%) - Correct
+Antler39F_antler39F_angle45_468.png: Tine (Confidence: 99.99%) - Correct
+Antler39F_antler39F_angle45_474.png: Tine (Confidence: 99.99%) - Correct
+Antler39F_antler39F_angle45_481.png: Tine (Confidence: 99.99%) - Correct
+Antler3F_antler3F_angle225_233.png: Not Tine (Confidence: 63.88%) - Correct
+Antler3F_antler3F_angle90_340.png: Tine (Confidence: 99.91%) - Correct
+Antler40F_antler40F_angle0_465.png: Tine (Confidence: 99.97%) - Correct
+Antler40F_antler40F_angle0_483.png: Tine (Confidence: 90.98%) - Correct
+Antler40F_antler40F_angle0_485.png: Tine (Confidence: 99.95%) - Correct
+Antler40F_antler40F_angle180_450.png: Tine (Confidence: 84.32%) - Correct
+Antler40F_antler40F_angle180_492.png: Tine (Confidence: 96.07%) - Correct
+Antler40F_antler40F_angle270_473.png: Tine (Confidence: 99.73%) - Correct
+Antler40F_antler40F_angle315_393.png: Tine (Confidence: 99.09%) - Correct
+Antler40F_antler40F_angle45_352.png: Tine (Confidence: 99.99%) - Correct
+Antler40F_antler40F_angle45_354.png: Tine (Confidence: 99.99%) - Correct
+Antler40F_antler40F_angle45_375.png: Tine (Confidence: 99.78%) - Correct
+Antler40F_antler40F_angle90_555.png: Tine (Confidence: 99.62%) - Correct
+Antler41F_antler41F_angle0_410.png: Tine (Confidence: 99.80%) - Correct
+Antler41F_antler41F_angle0_414.png: Tine (Confidence: 99.77%) - Correct
+Antler41F_antler41F_angle0_452.png: Tine (Confidence: 99.64%) - Correct
+Antler41F_antler41F_angle135_507.png: Tine (Confidence: 98.37%) - Correct
+Antler41F_antler41F_angle180_345.png: Tine (Confidence: 100.00%) - Correct
+Antler41F_antler41F_angle180_350.png: Tine (Confidence: 99.97%) - Correct
+Antler41F_antler41F_angle225_376.png: Tine (Confidence: 97.94%) - Correct
+Antler41F_antler41F_angle225_380.png: Tine (Confidence: 98.85%) - Correct
+Antler41F_antler41F_angle225_390.png: Tine (Confidence: 99.75%) - Correct
+Antler41F_antler41F_angle45_472.png: Tine (Confidence: 99.46%) - Correct
+Antler41F_antler41F_angle45_503.png: Tine (Confidence: 99.92%) - Correct
+Antler41F_antler41F_angle45_514.png: Tine (Confidence: 99.48%) - Correct
+Antler41F_antler41F_angle45_524.png: Tine (Confidence: 99.86%) - Correct
+Antler41F_antler41F_angle90_309.png: Tine (Confidence: 65.62%) - Correct
+Antler42F_antler42F_angle0_559.png: Tine (Confidence: 99.88%) - Correct
+Antler42F_antler42F_angle0_570.png: Tine (Confidence: 99.88%) - Correct
+Antler42F_antler42F_angle180_240.png: Tine (Confidence: 99.65%) - Correct
+Antler42F_antler42F_angle225_227.png: Tine (Confidence: 84.54%) - Correct
+Antler42F_antler42F_angle225_286.png: Tine (Confidence: 99.85%) - Correct
+Antler42F_antler42F_angle225_349.png: Tine (Confidence: 99.94%) - Correct
+Antler42F_antler42F_angle225_410.png: Tine (Confidence: 99.48%) - Correct
+Antler42F_antler42F_angle315_547.png: Tine (Confidence: 54.67%) - Correct
+Antler42F_antler42F_angle45_497.png: Tine (Confidence: 99.98%) - Correct
+Antler42F_antler42F_angle90_390.png: Tine (Confidence: 100.00%) - Correct
+Antler43F_antler43F_angle0_362.png: Tine (Confidence: 100.00%) - Correct
+Antler43F_antler43F_angle0_394.png: Tine (Confidence: 87.38%) - Correct
+Antler43F_antler43F_angle270_419.png: Tine (Confidence: 100.00%) - Correct
+Antler43F_antler43F_angle270_431.png: Tine (Confidence: 99.94%) - Correct
+Antler43F_antler43F_angle315_327.png: Tine (Confidence: 74.40%) - Correct
+Antler43F_antler43F_angle315_332.png: Tine (Confidence: 74.79%) - Correct
+Antler43F_antler43F_angle45_360.png: Tine (Confidence: 100.00%) - Correct
+Antler43F_antler43F_angle45_397.png: Tine (Confidence: 100.00%) - Correct
+Antler43F_antler43F_angle90_343.png: Tine (Confidence: 97.04%) - Correct
+Antler44F_antler44F_angle0_356.png: Tine (Confidence: 99.98%) - Correct
+Antler44F_antler44F_angle0_371.png: Tine (Confidence: 99.96%) - Correct
+Antler44F_antler44F_angle135_267.png: Tine (Confidence: 100.00%) - Correct
+Antler44F_antler44F_angle180_156.png: Not Tine (Confidence: 94.22%) - Correct
+Antler44F_antler44F_angle180_348.png: Tine (Confidence: 99.25%) - Correct
+Antler44F_antler44F_angle225_259.png: Not Tine (Confidence: 75.71%) - Correct
+Antler44F_antler44F_angle270_307.png: Tine (Confidence: 99.99%) - Correct
+Antler44F_antler44F_angle315_365.png: Tine (Confidence: 96.88%) - Correct
+Antler44F_antler44F_angle45_335.png: Tine (Confidence: 99.95%) - Correct
+Antler44F_antler44F_angle45_337.png: Tine (Confidence: 99.88%) - Correct
+Antler44F_antler44F_angle45_339.png: Tine (Confidence: 99.81%) - Correct
+Antler45F_antler45F_angle0_394.png: Tine (Confidence: 99.99%) - Correct
+Antler45F_antler45F_angle0_422.png: Tine (Confidence: 100.00%) - Correct
+Antler45F_antler45F_angle45_299.png: Tine (Confidence: 99.92%) - Correct
+Antler46F_antler46F_angle0_331.png: Tine (Confidence: 98.02%) - Correct
+Antler46F_antler46F_angle0_347.png: Tine (Confidence: 92.81%) - Correct
+Antler46F_antler46F_angle0_451.png: Tine (Confidence: 99.87%) - Correct
+Antler46F_antler46F_angle0_460.png: Tine (Confidence: 99.87%) - Correct
+Antler46F_antler46F_angle135_382.png: Tine (Confidence: 99.82%) - Correct
+Antler46F_antler46F_angle135_400.png: Tine (Confidence: 99.74%) - Correct
+Antler46F_antler46F_angle135_412.png: Tine (Confidence: 99.87%) - Correct
+Antler46F_antler46F_angle225_348.png: Tine (Confidence: 98.66%) - Correct
+Antler46F_antler46F_angle225_359.png: Tine (Confidence: 97.98%) - Correct
+Antler46F_antler46F_angle225_366.png: Tine (Confidence: 96.72%) - Correct
+Antler46F_antler46F_angle270_443.png: Tine (Confidence: 99.77%) - Correct
+Antler46F_antler46F_angle270_445.png: Tine (Confidence: 99.95%) - Correct
+Antler46F_antler46F_angle315_521.png: Tine (Confidence: 99.84%) - Correct
+Antler46F_antler46F_angle45_337.png: Tine (Confidence: 97.28%) - Correct
+Antler46F_antler46F_angle45_406.png: Tine (Confidence: 97.09%) - Correct
+Antler47F_antler47F_angle0_370.png: Tine (Confidence: 97.99%) - Correct
+Antler47F_antler47F_angle0_385.png: Tine (Confidence: 98.58%) - Correct
+Antler47F_antler47F_angle45_568.png: Tine (Confidence: 99.98%) - Correct
+Antler47F_antler47F_angle90_102.png: Tine (Confidence: 92.28%) - Correct
+Antler4F_antler4F_angle0_455.png: Tine (Confidence: 99.98%) - Correct
+Antler4F_antler4F_angle0_531.png: Tine (Confidence: 100.00%) - Correct
+Antler4F_antler4F_angle180_439.png: Tine (Confidence: 99.96%) - Correct
+Antler4F_antler4F_angle225_539.png: Tine (Confidence: 99.49%) - Correct
+Antler4F_antler4F_angle225_616.png: Tine (Confidence: 99.97%) - Correct
+Antler4F_antler4F_angle315_553.png: Tine (Confidence: 99.89%) - Correct
+Antler4F_antler4F_angle45_471.png: Tine (Confidence: 100.00%) - Correct
+Antler5F_antler5F_angle0_290.png: Tine (Confidence: 99.95%) - Correct
+Antler5F_antler5F_angle180_140.png: Tine (Confidence: 99.87%) - Correct
+Antler5F_antler5F_angle225_361.png: Tine (Confidence: 99.98%) - Correct
+Antler5F_antler5F_angle270_292.png: Tine (Confidence: 99.98%) - Correct
+Antler5F_antler5F_angle270_304.png: Tine (Confidence: 98.80%) - Correct
+Antler5F_antler5F_angle45_333.png: Tine (Confidence: 99.41%) - Correct
+Antler5F_antler5F_angle45_340.png: Tine (Confidence: 97.60%) - Correct
+Antler6F_antler6F_angle0_330.png: Tine (Confidence: 99.87%) - Correct
+Antler6F_antler6F_angle225_332.png: Tine (Confidence: 99.94%) - Correct
+Antler6F_antler6F_angle225_374.png: Tine (Confidence: 99.68%) - Correct
+Antler6F_antler6F_angle315_154.png: Tine (Confidence: 72.86%) - Correct
+Antler6F_antler6F_angle45_371.png: Tine (Confidence: 99.60%) - Correct
+Antler6F_antler6F_angle90_403.png: Tine (Confidence: 100.00%) - Correct
+Antler7F_antler7F_angle45_421.png: Tine (Confidence: 99.91%) - Correct
+Antler8F_antler8F_angle0_548.png: Tine (Confidence: 99.68%) - Correct
+Antler8F_antler8F_angle270_626.png: Tine (Confidence: 100.00%) - Correct
+Antler8F_antler8F_angle45_397.png: Tine (Confidence: 98.02%) - Correct
+Antler8F_antler8F_angle45_410.png: Tine (Confidence: 99.20%) - Correct
+Antler8F_antler8F_angle45_431.png: Tine (Confidence: 99.60%) - Correct
+Antler8F_antler8F_angle45_448.png: Tine (Confidence: 99.13%) - Correct
+Antler8F_antler8F_angle45_480.png: Tine (Confidence: 99.60%) - Correct
+Antler8F_antler8F_angle45_487.png: Tine (Confidence: 99.35%) - Correct
+Antler9F_antler9F_angle0_388.png: Tine (Confidence: 93.03%) - Correct
+Antler9F_antler9F_angle0_403.png: Tine (Confidence: 93.77%) - Correct
+Antler9F_antler9F_angle0_411.png: Tine (Confidence: 82.28%) - Correct
+Antler9F_antler9F_angle225_253.png: Tine (Confidence: 99.98%) - Correct
+Antler9F_antler9F_angle270_409.png: Tine (Confidence: 96.16%) - Correct
+Antler9F_antler9F_angle315_241.png: Tine (Confidence: 67.85%) - Correct
+Antler9F_antler9F_angle45_422.png: Tine (Confidence: 99.87%) - Correct
+Antler9F_antler9F_angle45_435.png: Tine (Confidence: 99.63%) - Correct
+Antler9F_antler9F_angle90_297.png: Tine (Confidence: 99.30%) - Correct
+Antler10F_antler10F_angle270_307.png: Not Tine (Confidence: 98.62%) - Correct
+Antler11F_antler11F_angle135_369.png: Not Tine (Confidence: 94.48%) - Correct
+Antler11F_antler11F_angle180_293.png: Not Tine (Confidence: 92.81%) - Correct
+Antler11F_antler11F_angle270_411.png: Not Tine (Confidence: 99.32%) - Correct
+Antler11F_antler11F_angle270_471.png: Not Tine (Confidence: 92.43%) - Correct
+Antler11F_antler11F_angle45_346.png: Not Tine (Confidence: 89.12%) - Correct
+Antler11F_antler11F_angle45_392.png: Not Tine (Confidence: 94.14%) - Correct
+Antler12F_antler12F_angle135_93.png: Not Tine (Confidence: 96.88%) - Correct
+Antler12F_antler12F_angle180_42.png: Not Tine (Confidence: 99.29%) - Correct
+Antler12F_antler12F_angle225_50.png: Not Tine (Confidence: 95.91%) - Correct
+Antler12F_antler12F_angle45_120.png: Not Tine (Confidence: 83.33%) - Correct
+Antler12F_antler12F_angle90_58.png: Not Tine (Confidence: 94.99%) - Correct
+Antler13F_antler13F_angle45_109.png: Tine (Confidence: 83.50%) - Incorrect
+Antler13F_antler13F_angle45_443.png: Not Tine (Confidence: 98.40%) - Correct
+Antler13F_antler13F_angle90_186.png: Not Tine (Confidence: 68.46%) - Correct
+Antler13F_antler13F_angle90_314.png: Not Tine (Confidence: 99.12%) - Correct
+Antler15F_antler15F_angle0_166.png: Not Tine (Confidence: 99.96%) - Correct
+Antler15F_antler15F_angle180_327.png: Not Tine (Confidence: 94.02%) - Correct
+Antler15F_antler15F_angle180_49.png: Tine (Confidence: 67.63%) - Incorrect
+Antler15F_antler15F_angle90_125.png: Not Tine (Confidence: 99.03%) - Correct
+Antler15F_antler15F_angle90_143.png: Not Tine (Confidence: 98.07%) - Correct
+Antler16F_antler16F_angle225_399.png: Not Tine (Confidence: 99.89%) - Correct
+Antler16F_antler16F_angle270_95.png: Not Tine (Confidence: 98.87%) - Correct
+Antler16F_antler16F_angle90_105.png: Not Tine (Confidence: 99.16%) - Correct
+Antler16F_antler16F_angle90_371.png: Not Tine (Confidence: 99.66%) - Correct
+Antler17F_antler17F_angle315_87.png: Not Tine (Confidence: 95.28%) - Correct
+Antler17F_antler17F_angle45_343.png: Not Tine (Confidence: 99.64%) - Correct
+Antler18F_antler18F_angle90_153.png: Not Tine (Confidence: 98.95%) - Correct
+Antler19F_antler19F_angle0_306.png: Not Tine (Confidence: 99.69%) - Correct
+Antler19F_antler19F_angle0_485.png: Not Tine (Confidence: 99.91%) - Correct
+Antler19F_antler19F_angle0_519.png: Not Tine (Confidence: 99.01%) - Correct
+Antler19F_antler19F_angle135_263.png: Not Tine (Confidence: 99.00%) - Correct
+Antler19F_antler19F_angle180_273.png: Not Tine (Confidence: 99.05%) - Correct
+Antler19F_antler19F_angle270_213.png: Not Tine (Confidence: 99.97%) - Correct
+Antler19F_antler19F_angle270_85.png: Not Tine (Confidence: 99.95%) - Correct
+Antler1F_antler1F_angle180_126.png: Not Tine (Confidence: 86.45%) - Correct
+Antler1F_antler1F_angle270_280.png: Not Tine (Confidence: 90.96%) - Correct
+Antler1F_antler1F_angle45_236.png: Not Tine (Confidence: 61.15%) - Correct
+Antler20F_antler20F_angle270_360.png: Not Tine (Confidence: 99.71%) - Correct
+Antler20F_antler20F_angle315_250.png: Not Tine (Confidence: 99.16%) - Correct
+Antler21F_antler21F_angle270_81.png: Not Tine (Confidence: 98.89%) - Correct
+Antler21F_antler21F_angle315_255.png: Not Tine (Confidence: 82.08%) - Correct
+Antler22F_antler22F_angle315_56.png: Not Tine (Confidence: 71.59%) - Correct
+Antler22F_antler22F_angle45_285.png: Not Tine (Confidence: 99.60%) - Correct
+Antler22F_antler22F_angle45_387.png: Not Tine (Confidence: 92.40%) - Correct
+Antler23F_antler23F_angle0_298.png: Not Tine (Confidence: 99.66%) - Correct
+Antler24F_antler24F_angle270_358.png: Not Tine (Confidence: 97.62%) - Correct
+Antler25F_antler25F_angle0_336.png: Not Tine (Confidence: 99.51%) - Correct
+Antler25F_antler25F_angle135_355.png: Not Tine (Confidence: 60.85%) - Correct
+Antler25F_antler25F_angle180_208.png: Not Tine (Confidence: 99.66%) - Correct
+Antler25F_antler25F_angle315_185.png: Not Tine (Confidence: 80.11%) - Correct
+Antler25F_antler25F_angle90_210.png: Not Tine (Confidence: 91.10%) - Correct
+Antler26F_antler26F_angle135_155.png: Not Tine (Confidence: 99.51%) - Correct
+Antler26F_antler26F_angle270_311.png: Tine (Confidence: 61.52%) - Incorrect
+Antler27F_antler27F_angle0_302.png: Not Tine (Confidence: 99.93%) - Correct
+Antler27F_antler27F_angle0_340.png: Not Tine (Confidence: 99.41%) - Correct
+Antler27F_antler27F_angle180_333.png: Not Tine (Confidence: 89.05%) - Correct
+Antler28F_antler28F_angle0_210.png: Not Tine (Confidence: 99.81%) - Correct
+Antler28F_antler28F_angle45_151.png: Not Tine (Confidence: 99.94%) - Correct
+Antler28F_antler28F_angle45_235.png: Not Tine (Confidence: 99.44%) - Correct
+Antler28F_antler28F_angle90_176.png: Not Tine (Confidence: 95.43%) - Correct
+Antler29F_antler29F_angle315_216.png: Not Tine (Confidence: 97.15%) - Correct
+Antler29F_antler29F_angle315_328.png: Not Tine (Confidence: 90.79%) - Correct
+Antler29F_antler29F_angle315_483.png: Not Tine (Confidence: 99.48%) - Correct
+Antler29F_antler29F_angle90_108.png: Not Tine (Confidence: 97.78%) - Correct
+Antler29F_antler29F_angle90_236.png: Not Tine (Confidence: 92.60%) - Correct
+Antler2F_antler2F_angle0_241.png: Not Tine (Confidence: 99.82%) - Correct
+Antler2F_antler2F_angle270_179.png: Not Tine (Confidence: 99.53%) - Correct
+Antler2F_antler2F_angle45_366.png: Not Tine (Confidence: 99.86%) - Correct
+Antler2F_antler2F_angle90_348.png: Not Tine (Confidence: 96.46%) - Correct
+Antler30F_antler30F_angle0_461.png: Not Tine (Confidence: 91.29%) - Correct
+Antler30F_antler30F_angle135_292.png: Not Tine (Confidence: 94.75%) - Correct
+Antler30F_antler30F_angle225_286.png: Not Tine (Confidence: 99.98%) - Correct
+Antler30F_antler30F_angle225_361.png: Not Tine (Confidence: 99.06%) - Correct
+Antler30F_antler30F_angle315_372.png: Not Tine (Confidence: 86.83%) - Correct
+Antler31F_antler31F_angle0_109.png: Not Tine (Confidence: 99.64%) - Correct
+Antler31F_antler31F_angle135_266.png: Not Tine (Confidence: 98.55%) - Correct
+Antler31F_antler31F_angle90_119.png: Not Tine (Confidence: 85.63%) - Correct
+Antler31F_antler31F_angle90_437.png: Not Tine (Confidence: 99.71%) - Correct
+Antler31F_antler31F_angle90_91.png: Not Tine (Confidence: 86.94%) - Correct
+Antler32F_antler32F_angle315_88.png: Not Tine (Confidence: 99.68%) - Correct
+Antler33F_antler33F_angle225_257.png: Not Tine (Confidence: 96.49%) - Correct
+Antler34F_antler34F_angle135_352.png: Not Tine (Confidence: 97.69%) - Correct
+Antler34F_antler34F_angle225_336.png: Not Tine (Confidence: 99.87%) - Correct
+Antler35F_antler35F_angle225_433.png: Not Tine (Confidence: 97.63%) - Correct
+Antler35F_antler35F_angle315_120.png: Tine (Confidence: 72.49%) - Incorrect
+Antler35F_antler35F_angle315_331.png: Tine (Confidence: 53.53%) - Incorrect
+Antler35F_antler35F_angle45_153.png: Not Tine (Confidence: 97.81%) - Correct
+Antler35F_antler35F_angle45_442.png: Not Tine (Confidence: 98.46%) - Correct
+Antler36F_antler36F_angle315_197.png: Not Tine (Confidence: 99.37%) - Correct
+Antler36F_antler36F_angle315_241.png: Not Tine (Confidence: 98.89%) - Correct
+Antler37F_antler37F_angle0_116.png: Not Tine (Confidence: 99.88%) - Correct
+Antler37F_antler37F_angle315_334.png: Not Tine (Confidence: 96.91%) - Correct
+Antler38F_antler38F_angle0_280.png: Not Tine (Confidence: 99.92%) - Correct
+Antler38F_antler38F_angle0_344.png: Not Tine (Confidence: 96.20%) - Correct
+Antler38F_antler38F_angle315_85.png: Not Tine (Confidence: 66.55%) - Correct
+Antler38F_antler38F_angle90_463.png: Not Tine (Confidence: 75.08%) - Correct
+Antler39F_antler39F_angle0_395.png: Not Tine (Confidence: 99.92%) - Correct
+Antler39F_antler39F_angle180_343.png: Not Tine (Confidence: 99.27%) - Correct
+Antler39F_antler39F_angle270_119.png: Not Tine (Confidence: 98.99%) - Correct
+Antler39F_antler39F_angle315_148.png: Not Tine (Confidence: 86.82%) - Correct
+Antler39F_antler39F_angle315_171.png: Not Tine (Confidence: 84.89%) - Correct
+Antler3F_antler3F_angle135_268.png: Not Tine (Confidence: 91.14%) - Correct
+Antler3F_antler3F_angle315_386.png: Tine (Confidence: 79.53%) - Incorrect
+Antler3F_antler3F_angle90_396.png: Not Tine (Confidence: 64.88%) - Correct
+Antler40F_antler40F_angle0_32.png: Not Tine (Confidence: 94.05%) - Correct
+Antler40F_antler40F_angle0_345.png: Not Tine (Confidence: 99.38%) - Correct
+Antler40F_antler40F_angle45_289.png: Not Tine (Confidence: 97.65%) - Correct
+Antler40F_antler40F_angle90_54.png: Not Tine (Confidence: 99.67%) - Correct
+Antler40F_antler40F_angle90_80.png: Not Tine (Confidence: 98.71%) - Correct
+Antler41F_antler41F_angle0_205.png: Not Tine (Confidence: 89.45%) - Correct
+Antler41F_antler41F_angle270_166.png: Not Tine (Confidence: 84.55%) - Correct
+Antler41F_antler41F_angle270_289.png: Not Tine (Confidence: 91.29%) - Correct
+Antler41F_antler41F_angle45_39.png: Not Tine (Confidence: 98.93%) - Correct
+Antler43F_antler43F_angle315_270.png: Not Tine (Confidence: 72.89%) - Correct
+Antler43F_antler43F_angle45_140.png: Not Tine (Confidence: 98.12%) - Correct
+Antler44F_antler44F_angle180_78.png: Not Tine (Confidence: 99.49%) - Correct
+Antler45F_antler45F_angle0_212.png: Not Tine (Confidence: 95.68%) - Correct
+Antler47F_antler47F_angle180_342.png: Not Tine (Confidence: 99.10%) - Correct
+Antler47F_antler47F_angle270_184.png: Not Tine (Confidence: 99.96%) - Correct
+Antler47F_antler47F_angle45_425.png: Not Tine (Confidence: 59.61%) - Correct
+Antler5F_antler5F_angle0_113.png: Not Tine (Confidence: 97.65%) - Correct
+Antler5F_antler5F_angle315_82.png: Not Tine (Confidence: 96.26%) - Correct
+Antler5F_antler5F_angle45_113.png: Not Tine (Confidence: 98.10%) - Correct
+Antler5F_antler5F_angle90_73.png: Tine (Confidence: 66.81%) - Incorrect
+Antler5F_antler5F_angle90_93.png: Not Tine (Confidence: 96.66%) - Correct
+Antler6F_antler6F_angle270_79.png: Not Tine (Confidence: 94.53%) - Correct
+Antler6F_antler6F_angle45_63.png: Not Tine (Confidence: 96.23%) - Correct
+Antler6F_antler6F_angle90_74.png: Not Tine (Confidence: 98.65%) - Correct
+Antler7F_antler7F_angle0_334.png: Not Tine (Confidence: 99.01%) - Correct
+Antler7F_antler7F_angle0_401.png: Not Tine (Confidence: 53.16%) - Correct
+Antler7F_antler7F_angle180_239.png: Not Tine (Confidence: 89.85%) - Correct
+Antler7F_antler7F_angle270_459.png: Not Tine (Confidence: 98.99%) - Correct
+Antler8F_antler8F_angle225_358.png: Not Tine (Confidence: 98.15%) - Correct
+Antler8F_antler8F_angle270_592.png: Not Tine (Confidence: 96.67%) - Correct
+Antler8F_antler8F_angle315_124.png: Not Tine (Confidence: 99.78%) - Correct
+Antler8F_antler8F_angle315_97.png: Not Tine (Confidence: 99.99%) - Correct
+Antler8F_antler8F_angle45_19.png: Not Tine (Confidence: 96.01%) - Correct
+Antler9F_antler9F_angle135_162.png: Tine (Confidence: 73.86%) - Incorrect
+Antler9F_antler9F_angle270_124.png: Not Tine (Confidence: 99.97%) - Correct
+Antler9F_antler9F_angle270_364.png: Not Tine (Confidence: 99.95%) - Correct
+Antler9F_antler9F_angle315_72.png: Not Tine (Confidence: 98.95%) - Correct
+Antler9F_antler9F_angle45_403.png: Not Tine (Confidence: 96.15%) - Correct
+Antler10F_antler10F_angle180_466.png: Tine (Confidence: 71.26%) - Correct
+Antler10F_antler10F_angle180_470.png: Tine (Confidence: 99.83%) - Correct
+Antler11F_antler11F_angle0_369.png: Tine (Confidence: 99.71%) - Correct
+Antler11F_antler11F_angle270_403.png: Tine (Confidence: 99.51%) - Correct
+Antler11F_antler11F_angle315_287.png: Tine (Confidence: 94.68%) - Correct
+Antler11F_antler11F_angle315_421.png: Tine (Confidence: 70.27%) - Correct
+Antler11F_antler11F_angle90_122.png: Tine (Confidence: 99.65%) - Correct
+Antler11F_antler11F_angle90_84.png: Tine (Confidence: 99.97%) - Correct
+Antler12F_antler12F_angle0_394.png: Tine (Confidence: 99.99%) - Correct
+Antler12F_antler12F_angle135_257.png: Tine (Confidence: 99.87%) - Correct
+Antler12F_antler12F_angle225_392.png: Tine (Confidence: 100.00%) - Correct
+Antler12F_antler12F_angle270_348.png: Tine (Confidence: 100.00%) - Correct
+Antler12F_antler12F_angle45_240.png: Tine (Confidence: 99.99%) - Correct
+Antler12F_antler12F_angle45_315.png: Tine (Confidence: 100.00%) - Correct
+Antler12F_antler12F_angle90_453.png: Tine (Confidence: 100.00%) - Correct
+Antler13F_antler13F_angle135_475.png: Tine (Confidence: 100.00%) - Correct
+Antler13F_antler13F_angle180_415.png: Tine (Confidence: 99.99%) - Correct
+Antler13F_antler13F_angle225_377.png: Tine (Confidence: 100.00%) - Correct
+Antler13F_antler13F_angle270_327.png: Tine (Confidence: 97.79%) - Correct
+Antler13F_antler13F_angle270_399.png: Tine (Confidence: 99.52%) - Correct
+Antler13F_antler13F_angle45_472.png: Tine (Confidence: 99.46%) - Correct
+Antler13F_antler13F_angle45_550.png: Tine (Confidence: 100.00%) - Correct
+Antler14F_antler14F_angle315_542.png: Tine (Confidence: 96.50%) - Correct
+Antler15F_antler15F_angle0_396.png: Tine (Confidence: 99.99%) - Correct
+Antler15F_antler15F_angle0_444.png: Tine (Confidence: 100.00%) - Correct
+Antler15F_antler15F_angle225_553.png: Tine (Confidence: 100.00%) - Correct
+Antler15F_antler15F_angle270_399.png: Tine (Confidence: 100.00%) - Correct
+Antler15F_antler15F_angle45_353.png: Tine (Confidence: 100.00%) - Correct
+Antler15F_antler15F_angle45_369.png: Tine (Confidence: 100.00%) - Correct
+Antler15F_antler15F_angle90_301.png: Tine (Confidence: 98.67%) - Correct
+Antler15F_antler15F_angle90_559.png: Tine (Confidence: 100.00%) - Correct
+Antler16F_antler16F_angle0_577.png: Tine (Confidence: 100.00%) - Correct
+Antler16F_antler16F_angle0_601.png: Tine (Confidence: 100.00%) - Correct
+Antler16F_antler16F_angle225_761.png: Tine (Confidence: 100.00%) - Correct
+Antler16F_antler16F_angle225_767.png: Tine (Confidence: 100.00%) - Correct
+Antler16F_antler16F_angle315_318.png: Tine (Confidence: 100.00%) - Correct
+Antler16F_antler16F_angle315_389.png: Tine (Confidence: 100.00%) - Correct
+Antler16F_antler16F_angle45_486.png: Tine (Confidence: 100.00%) - Correct
+Antler16F_antler16F_angle45_527.png: Tine (Confidence: 100.00%) - Correct
+Antler16F_antler16F_angle45_541.png: Tine (Confidence: 100.00%) - Correct
+Antler16F_antler16F_angle45_546.png: Tine (Confidence: 100.00%) - Correct
+Antler16F_antler16F_angle45_548.png: Tine (Confidence: 100.00%) - Correct
+Antler17F_antler17F_angle0_357.png: Tine (Confidence: 99.99%) - Correct
+Antler17F_antler17F_angle0_377.png: Tine (Confidence: 99.99%) - Correct
+Antler17F_antler17F_angle225_359.png: Tine (Confidence: 99.91%) - Correct
+Antler17F_antler17F_angle315_164.png: Tine (Confidence: 99.88%) - Correct
+Antler17F_antler17F_angle315_357.png: Tine (Confidence: 99.97%) - Correct
+Antler17F_antler17F_angle45_420.png: Tine (Confidence: 98.03%) - Correct
+Antler17F_antler17F_angle45_497.png: Tine (Confidence: 99.79%) - Correct
+Antler18F_antler18F_angle180_235.png: Tine (Confidence: 99.94%) - Correct
+Antler18F_antler18F_angle180_348.png: Tine (Confidence: 100.00%) - Correct
+Antler18F_antler18F_angle270_143.png: Tine (Confidence: 98.85%) - Correct
+Antler18F_antler18F_angle270_177.png: Tine (Confidence: 99.47%) - Correct
+Antler18F_antler18F_angle315_231.png: Tine (Confidence: 98.74%) - Correct
+Antler19F_antler19F_angle135_527.png: Tine (Confidence: 99.99%) - Correct
+Antler19F_antler19F_angle270_369.png: Tine (Confidence: 77.87%) - Correct
+Antler19F_antler19F_angle270_421.png: Tine (Confidence: 93.10%) - Correct
+Antler19F_antler19F_angle270_429.png: Tine (Confidence: 88.05%) - Correct
+Antler19F_antler19F_angle270_480.png: Tine (Confidence: 99.05%) - Correct
+Antler19F_antler19F_angle270_554.png: Tine (Confidence: 99.98%) - Correct
+Antler19F_antler19F_angle315_214.png: Tine (Confidence: 56.75%) - Correct
+Antler19F_antler19F_angle315_229.png: Tine (Confidence: 95.19%) - Correct
+Antler19F_antler19F_angle315_382.png: Tine (Confidence: 100.00%) - Correct
+Antler19F_antler19F_angle315_415.png: Tine (Confidence: 100.00%) - Correct
+Antler19F_antler19F_angle45_381.png: Tine (Confidence: 99.78%) - Correct
+Antler19F_antler19F_angle90_229.png: Tine (Confidence: 97.64%) - Correct
+Antler19F_antler19F_angle90_382.png: Tine (Confidence: 100.00%) - Correct
+Antler1F_antler1F_angle135_475.png: Tine (Confidence: 99.97%) - Correct
+Antler1F_antler1F_angle270_90.png: Tine (Confidence: 98.77%) - Correct
+Antler20F_antler20F_angle0_612.png: Tine (Confidence: 100.00%) - Correct
+Antler20F_antler20F_angle0_655.png: Tine (Confidence: 100.00%) - Correct
+Antler20F_antler20F_angle0_666.png: Tine (Confidence: 100.00%) - Correct
+Antler20F_antler20F_angle135_535.png: Tine (Confidence: 99.64%) - Correct
+Antler20F_antler20F_angle270_386.png: Tine (Confidence: 91.17%) - Correct
+Antler20F_antler20F_angle315_404.png: Tine (Confidence: 99.99%) - Correct
+Antler20F_antler20F_angle315_457.png: Tine (Confidence: 100.00%) - Correct
+Antler20F_antler20F_angle315_667.png: Tine (Confidence: 99.97%) - Correct
+Antler20F_antler20F_angle45_519.png: Tine (Confidence: 100.00%) - Correct
+Antler20F_antler20F_angle90_343.png: Tine (Confidence: 100.00%) - Correct
+Antler21F_antler21F_angle0_388.png: Tine (Confidence: 99.99%) - Correct
+Antler21F_antler21F_angle0_412.png: Tine (Confidence: 99.60%) - Correct
+Antler21F_antler21F_angle0_499.png: Tine (Confidence: 100.00%) - Correct
+Antler21F_antler21F_angle0_536.png: Tine (Confidence: 100.00%) - Correct
+Antler21F_antler21F_angle0_602.png: Tine (Confidence: 99.99%) - Correct
+Antler21F_antler21F_angle135_181.png: Tine (Confidence: 99.93%) - Correct
+Antler21F_antler21F_angle180_394.png: Tine (Confidence: 99.97%) - Correct
+Antler21F_antler21F_angle270_336.png: Tine (Confidence: 99.74%) - Correct
+Antler21F_antler21F_angle315_404.png: Tine (Confidence: 100.00%) - Correct
+Antler21F_antler21F_angle315_458.png: Tine (Confidence: 99.99%) - Correct
+Antler21F_antler21F_angle45_366.png: Tine (Confidence: 100.00%) - Correct
+Antler21F_antler21F_angle45_373.png: Tine (Confidence: 100.00%) - Correct
+Antler21F_antler21F_angle45_417.png: Tine (Confidence: 100.00%) - Correct
+Antler22F_antler22F_angle0_302.png: Tine (Confidence: 100.00%) - Correct
+Antler22F_antler22F_angle0_349.png: Tine (Confidence: 99.99%) - Correct
+Antler22F_antler22F_angle0_407.png: Tine (Confidence: 100.00%) - Correct
+Antler22F_antler22F_angle135_459.png: Tine (Confidence: 99.50%) - Correct
+Antler22F_antler22F_angle315_311.png: Tine (Confidence: 100.00%) - Correct
+Antler22F_antler22F_angle315_503.png: Tine (Confidence: 100.00%) - Correct
+Antler23F_antler23F_angle0_256.png: Tine (Confidence: 99.95%) - Correct
+Antler23F_antler23F_angle0_439.png: Tine (Confidence: 99.97%) - Correct
+Antler23F_antler23F_angle135_254.png: Tine (Confidence: 100.00%) - Correct
+Antler23F_antler23F_angle180_240.png: Tine (Confidence: 99.02%) - Correct
+Antler23F_antler23F_angle270_486.png: Tine (Confidence: 99.99%) - Correct
+Antler23F_antler23F_angle315_471.png: Tine (Confidence: 99.98%) - Correct
+Antler23F_antler23F_angle45_481.png: Tine (Confidence: 100.00%) - Correct
+Antler23F_antler23F_angle45_493.png: Tine (Confidence: 100.00%) - Correct
+Antler25F_antler25F_angle0_377.png: Tine (Confidence: 100.00%) - Correct
+Antler25F_antler25F_angle0_402.png: Tine (Confidence: 100.00%) - Correct
+Antler25F_antler25F_angle45_509.png: Tine (Confidence: 99.96%) - Correct
+Antler25F_antler25F_angle45_524.png: Tine (Confidence: 99.94%) - Correct
+Antler25F_antler25F_angle45_534.png: Tine (Confidence: 99.90%) - Correct
+Antler25F_antler25F_angle45_546.png: Tine (Confidence: 99.91%) - Correct
+Antler25F_antler25F_angle90_379.png: Tine (Confidence: 100.00%) - Correct
+Antler25F_antler25F_angle90_415.png: Tine (Confidence: 100.00%) - Correct
+Antler26F_antler26F_angle45_430.png: Tine (Confidence: 99.95%) - Correct
+Antler27F_antler27F_angle0_522.png: Tine (Confidence: 100.00%) - Correct
+Antler27F_antler27F_angle0_528.png: Tine (Confidence: 100.00%) - Correct
+Antler27F_antler27F_angle225_475.png: Tine (Confidence: 99.89%) - Correct
+Antler27F_antler27F_angle225_525.png: Tine (Confidence: 100.00%) - Correct
+Antler27F_antler27F_angle45_362.png: Tine (Confidence: 100.00%) - Correct
+Antler27F_antler27F_angle45_376.png: Tine (Confidence: 100.00%) - Correct
+Antler27F_antler27F_angle45_407.png: Tine (Confidence: 100.00%) - Correct
+Antler27F_antler27F_angle45_443.png: Tine (Confidence: 100.00%) - Correct
+Antler27F_antler27F_angle45_456.png: Tine (Confidence: 100.00%) - Correct
+Antler27F_antler27F_angle45_466.png: Tine (Confidence: 100.00%) - Correct
+Antler28F_antler28F_angle45_507.png: Tine (Confidence: 100.00%) - Correct
+Antler28F_antler28F_angle45_511.png: Tine (Confidence: 100.00%) - Correct
+Antler29F_antler29F_angle0_326.png: Tine (Confidence: 99.97%) - Correct
+Antler29F_antler29F_angle0_401.png: Tine (Confidence: 99.92%) - Correct
+Antler29F_antler29F_angle0_526.png: Tine (Confidence: 100.00%) - Correct
+Antler29F_antler29F_angle135_489.png: Tine (Confidence: 99.47%) - Correct
+Antler29F_antler29F_angle225_372.png: Tine (Confidence: 99.73%) - Correct
+Antler2F_antler2F_angle270_358.png: Tine (Confidence: 100.00%) - Correct
+Antler30F_antler30F_angle135_404.png: Tine (Confidence: 100.00%) - Correct
+Antler30F_antler30F_angle135_416.png: Tine (Confidence: 100.00%) - Correct
+Antler30F_antler30F_angle135_430.png: Tine (Confidence: 100.00%) - Correct
+Antler30F_antler30F_angle180_550.png: Tine (Confidence: 100.00%) - Correct
+Antler30F_antler30F_angle225_182.png: Tine (Confidence: 100.00%) - Correct
+Antler30F_antler30F_angle225_222.png: Tine (Confidence: 100.00%) - Correct
+Antler30F_antler30F_angle225_257.png: Tine (Confidence: 100.00%) - Correct
+Antler30F_antler30F_angle225_358.png: Tine (Confidence: 100.00%) - Correct
+Antler30F_antler30F_angle225_381.png: Tine (Confidence: 100.00%) - Correct
+Antler30F_antler30F_angle225_411.png: Tine (Confidence: 99.98%) - Correct
+Antler30F_antler30F_angle225_416.png: Tine (Confidence: 100.00%) - Correct
+Antler30F_antler30F_angle225_430.png: Tine (Confidence: 100.00%) - Correct
+Antler30F_antler30F_angle225_438.png: Tine (Confidence: 100.00%) - Correct
+Antler30F_antler30F_angle225_464.png: Tine (Confidence: 99.38%) - Correct
+Antler30F_antler30F_angle270_158.png: Tine (Confidence: 99.97%) - Correct
+Antler30F_antler30F_angle270_165.png: Tine (Confidence: 99.52%) - Correct
+Antler30F_antler30F_angle315_189.png: Tine (Confidence: 100.00%) - Correct
+Antler30F_antler30F_angle315_512.png: Tine (Confidence: 100.00%) - Correct
+Antler31F_antler31F_angle0_356.png: Tine (Confidence: 99.81%) - Correct
+Antler31F_antler31F_angle135_344.png: Tine (Confidence: 100.00%) - Correct
+Antler31F_antler31F_angle90_353.png: Tine (Confidence: 99.52%) - Correct
+Antler32F_antler32F_angle135_399.png: Tine (Confidence: 100.00%) - Correct
+Antler32F_antler32F_angle225_359.png: Tine (Confidence: 100.00%) - Correct
+Antler32F_antler32F_angle90_465.png: Tine (Confidence: 100.00%) - Correct
+Antler33F_antler33F_angle0_396.png: Tine (Confidence: 100.00%) - Correct
+Antler33F_antler33F_angle0_490.png: Tine (Confidence: 99.69%) - Correct
+Antler33F_antler33F_angle0_505.png: Tine (Confidence: 77.55%) - Correct
+Antler33F_antler33F_angle135_249.png: Tine (Confidence: 93.47%) - Correct
+Antler33F_antler33F_angle135_271.png: Tine (Confidence: 92.13%) - Correct
+Antler33F_antler33F_angle180_160.png: Tine (Confidence: 95.66%) - Correct
+Antler33F_antler33F_angle225_424.png: Tine (Confidence: 97.69%) - Correct
+Antler33F_antler33F_angle225_448.png: Tine (Confidence: 99.97%) - Correct
+Antler33F_antler33F_angle270_535.png: Tine (Confidence: 100.00%) - Correct
+Antler33F_antler33F_angle45_457.png: Tine (Confidence: 99.97%) - Correct
+Antler33F_antler33F_angle45_615.png: Tine (Confidence: 100.00%) - Correct
+Antler33F_antler33F_angle90_288.png: Tine (Confidence: 99.43%) - Correct
+Antler34F_antler34F_angle0_582.png: Tine (Confidence: 100.00%) - Correct
+Antler34F_antler34F_angle225_519.png: Tine (Confidence: 100.00%) - Correct
+Antler34F_antler34F_angle270_283.png: Tine (Confidence: 98.05%) - Correct
+Antler34F_antler34F_angle270_399.png: Tine (Confidence: 99.99%) - Correct
+Antler35F_antler35F_angle0_596.png: Tine (Confidence: 99.99%) - Correct
+Antler35F_antler35F_angle0_644.png: Tine (Confidence: 100.00%) - Correct
+Antler35F_antler35F_angle0_665.png: Tine (Confidence: 99.99%) - Correct
+Antler35F_antler35F_angle0_697.png: Tine (Confidence: 99.99%) - Correct
+Antler35F_antler35F_angle90_151.png: Tine (Confidence: 100.00%) - Correct
+Antler35F_antler35F_angle90_177.png: Tine (Confidence: 100.00%) - Correct
+Antler35F_antler35F_angle90_223.png: Tine (Confidence: 100.00%) - Correct
+Antler35F_antler35F_angle90_290.png: Tine (Confidence: 97.25%) - Correct
+Antler35F_antler35F_angle90_600.png: Tine (Confidence: 100.00%) - Correct
+Antler36F_antler36F_angle135_465.png: Tine (Confidence: 100.00%) - Correct
+Antler36F_antler36F_angle180_342.png: Tine (Confidence: 100.00%) - Correct
+Antler37F_antler37F_angle0_448.png: Tine (Confidence: 98.64%) - Correct
+Antler37F_antler37F_angle0_462.png: Tine (Confidence: 99.99%) - Correct
+Antler37F_antler37F_angle0_486.png: Tine (Confidence: 99.99%) - Correct
+Antler37F_antler37F_angle0_495.png: Tine (Confidence: 99.98%) - Correct
+Antler37F_antler37F_angle0_500.png: Tine (Confidence: 99.99%) - Correct
+Antler37F_antler37F_angle0_508.png: Tine (Confidence: 99.98%) - Correct
+Antler37F_antler37F_angle0_513.png: Tine (Confidence: 99.96%) - Correct
+Antler37F_antler37F_angle135_419.png: Tine (Confidence: 100.00%) - Correct
+Antler37F_antler37F_angle180_334.png: Tine (Confidence: 99.99%) - Correct
+Antler37F_antler37F_angle180_343.png: Tine (Confidence: 99.96%) - Correct
+Antler37F_antler37F_angle180_399.png: Tine (Confidence: 100.00%) - Correct
+Antler37F_antler37F_angle225_306.png: Tine (Confidence: 99.84%) - Correct
+Antler37F_antler37F_angle225_325.png: Tine (Confidence: 100.00%) - Correct
+Antler37F_antler37F_angle225_326.png: Tine (Confidence: 99.87%) - Correct
+Antler37F_antler37F_angle270_474.png: Tine (Confidence: 100.00%) - Correct
+Antler37F_antler37F_angle315_421.png: Tine (Confidence: 100.00%) - Correct
+Antler37F_antler37F_angle45_390.png: Tine (Confidence: 99.97%) - Correct
+Antler37F_antler37F_angle45_499.png: Tine (Confidence: 100.00%) - Correct
+Antler37F_antler37F_angle45_515.png: Tine (Confidence: 100.00%) - Correct
+Antler37F_antler37F_angle45_539.png: Tine (Confidence: 100.00%) - Correct
+Antler37F_antler37F_angle90_582.png: Tine (Confidence: 100.00%) - Correct
+Antler38F_antler38F_angle90_482.png: Tine (Confidence: 96.70%) - Correct
+Antler39F_antler39F_angle0_425.png: Tine (Confidence: 100.00%) - Correct
+Antler39F_antler39F_angle135_180.png: Tine (Confidence: 99.88%) - Correct
+Antler39F_antler39F_angle225_326.png: Tine (Confidence: 100.00%) - Correct
+Antler39F_antler39F_angle225_365.png: Tine (Confidence: 100.00%) - Correct
+Antler39F_antler39F_angle225_65.png: Tine (Confidence: 81.11%) - Correct
+Antler39F_antler39F_angle45_468.png: Tine (Confidence: 100.00%) - Correct
+Antler39F_antler39F_angle45_474.png: Tine (Confidence: 100.00%) - Correct
+Antler39F_antler39F_angle45_481.png: Tine (Confidence: 100.00%) - Correct
+Antler3F_antler3F_angle225_233.png: Tine (Confidence: 97.63%) - Correct
+Antler3F_antler3F_angle90_340.png: Tine (Confidence: 99.81%) - Correct
+Antler40F_antler40F_angle0_465.png: Tine (Confidence: 100.00%) - Correct
+Antler40F_antler40F_angle0_483.png: Tine (Confidence: 97.98%) - Correct
+Antler40F_antler40F_angle0_485.png: Tine (Confidence: 99.98%) - Correct
+Antler40F_antler40F_angle180_450.png: Tine (Confidence: 61.55%) - Correct
+Antler40F_antler40F_angle180_492.png: Tine (Confidence: 97.53%) - Correct
+Antler40F_antler40F_angle270_473.png: Tine (Confidence: 99.99%) - Correct
+Antler40F_antler40F_angle315_393.png: Tine (Confidence: 99.77%) - Correct
+Antler40F_antler40F_angle45_352.png: Tine (Confidence: 100.00%) - Correct
+Antler40F_antler40F_angle45_354.png: Tine (Confidence: 100.00%) - Correct
+Antler40F_antler40F_angle45_375.png: Tine (Confidence: 99.88%) - Correct
+Antler40F_antler40F_angle90_555.png: Tine (Confidence: 96.99%) - Correct
+Antler41F_antler41F_angle0_410.png: Tine (Confidence: 99.98%) - Correct
+Antler41F_antler41F_angle0_414.png: Tine (Confidence: 100.00%) - Correct
+Antler41F_antler41F_angle0_452.png: Tine (Confidence: 100.00%) - Correct
+Antler41F_antler41F_angle135_507.png: Tine (Confidence: 99.61%) - Correct
+Antler41F_antler41F_angle180_345.png: Tine (Confidence: 100.00%) - Correct
+Antler41F_antler41F_angle180_350.png: Tine (Confidence: 100.00%) - Correct
+Antler41F_antler41F_angle225_376.png: Tine (Confidence: 99.99%) - Correct
+Antler41F_antler41F_angle225_380.png: Tine (Confidence: 99.98%) - Correct
+Antler41F_antler41F_angle225_390.png: Tine (Confidence: 100.00%) - Correct
+Antler41F_antler41F_angle45_472.png: Tine (Confidence: 99.93%) - Correct
+Antler41F_antler41F_angle45_503.png: Tine (Confidence: 99.99%) - Correct
+Antler41F_antler41F_angle45_514.png: Tine (Confidence: 99.98%) - Correct
+Antler41F_antler41F_angle45_524.png: Tine (Confidence: 100.00%) - Correct
+Antler41F_antler41F_angle90_309.png: Tine (Confidence: 99.87%) - Correct
+Antler42F_antler42F_angle0_559.png: Tine (Confidence: 100.00%) - Correct
+Antler42F_antler42F_angle0_570.png: Tine (Confidence: 100.00%) - Correct
+Antler42F_antler42F_angle180_240.png: Tine (Confidence: 85.62%) - Correct
+Antler42F_antler42F_angle225_227.png: Tine (Confidence: 98.94%) - Correct
+Antler42F_antler42F_angle225_286.png: Tine (Confidence: 100.00%) - Correct
+Antler42F_antler42F_angle225_349.png: Tine (Confidence: 100.00%) - Correct
+Antler42F_antler42F_angle225_410.png: Tine (Confidence: 99.92%) - Correct
+Antler42F_antler42F_angle315_547.png: Tine (Confidence: 96.95%) - Correct
+Antler42F_antler42F_angle45_497.png: Tine (Confidence: 100.00%) - Correct
+Antler42F_antler42F_angle90_390.png: Tine (Confidence: 100.00%) - Correct
+Antler43F_antler43F_angle0_362.png: Tine (Confidence: 100.00%) - Correct
+Antler43F_antler43F_angle0_394.png: Tine (Confidence: 96.92%) - Correct
+Antler43F_antler43F_angle270_419.png: Tine (Confidence: 100.00%) - Correct
+Antler43F_antler43F_angle270_431.png: Tine (Confidence: 100.00%) - Correct
+Antler43F_antler43F_angle315_327.png: Tine (Confidence: 97.49%) - Correct
+Antler43F_antler43F_angle315_332.png: Tine (Confidence: 98.06%) - Correct
+Antler43F_antler43F_angle45_360.png: Tine (Confidence: 100.00%) - Correct
+Antler43F_antler43F_angle45_397.png: Tine (Confidence: 100.00%) - Correct
+Antler43F_antler43F_angle90_343.png: Tine (Confidence: 99.12%) - Correct
+Antler44F_antler44F_angle0_356.png: Tine (Confidence: 99.99%) - Correct
+Antler44F_antler44F_angle0_371.png: Tine (Confidence: 99.99%) - Correct
+Antler44F_antler44F_angle135_267.png: Tine (Confidence: 100.00%) - Correct
+Antler44F_antler44F_angle180_156.png: Tine (Confidence: 86.07%) - Correct
+Antler44F_antler44F_angle180_348.png: Tine (Confidence: 96.55%) - Correct
+Antler44F_antler44F_angle225_259.png: Tine (Confidence: 97.56%) - Correct
+Antler44F_antler44F_angle270_307.png: Tine (Confidence: 100.00%) - Correct
+Antler44F_antler44F_angle315_365.png: Tine (Confidence: 99.17%) - Correct
+Antler44F_antler44F_angle45_335.png: Tine (Confidence: 100.00%) - Correct
+Antler44F_antler44F_angle45_337.png: Tine (Confidence: 100.00%) - Correct
+Antler44F_antler44F_angle45_339.png: Tine (Confidence: 100.00%) - Correct
+Antler45F_antler45F_angle0_394.png: Tine (Confidence: 100.00%) - Correct
+Antler45F_antler45F_angle0_422.png: Tine (Confidence: 100.00%) - Correct
+Antler45F_antler45F_angle45_299.png: Tine (Confidence: 99.98%) - Correct
+Antler46F_antler46F_angle0_331.png: Tine (Confidence: 99.11%) - Correct
+Antler46F_antler46F_angle0_347.png: Tine (Confidence: 99.88%) - Correct
+Antler46F_antler46F_angle0_451.png: Tine (Confidence: 100.00%) - Correct
+Antler46F_antler46F_angle0_460.png: Tine (Confidence: 100.00%) - Correct
+Antler46F_antler46F_angle135_382.png: Tine (Confidence: 100.00%) - Correct
+Antler46F_antler46F_angle135_400.png: Tine (Confidence: 100.00%) - Correct
+Antler46F_antler46F_angle135_412.png: Tine (Confidence: 100.00%) - Correct
+Antler46F_antler46F_angle225_348.png: Tine (Confidence: 100.00%) - Correct
+Antler46F_antler46F_angle225_359.png: Tine (Confidence: 100.00%) - Correct
+Antler46F_antler46F_angle225_366.png: Tine (Confidence: 100.00%) - Correct
+Antler46F_antler46F_angle270_443.png: Tine (Confidence: 100.00%) - Correct
+Antler46F_antler46F_angle270_445.png: Tine (Confidence: 100.00%) - Correct
+Antler46F_antler46F_angle315_521.png: Tine (Confidence: 100.00%) - Correct
+Antler46F_antler46F_angle45_337.png: Tine (Confidence: 99.98%) - Correct
+Antler46F_antler46F_angle45_406.png: Tine (Confidence: 98.80%) - Correct
+Antler47F_antler47F_angle0_370.png: Tine (Confidence: 99.53%) - Correct
+Antler47F_antler47F_angle0_385.png: Tine (Confidence: 99.59%) - Correct
+Antler47F_antler47F_angle45_568.png: Tine (Confidence: 99.99%) - Correct
+Antler47F_antler47F_angle90_102.png: Tine (Confidence: 76.90%) - Correct
+Antler4F_antler4F_angle0_455.png: Tine (Confidence: 100.00%) - Correct
+Antler4F_antler4F_angle0_531.png: Tine (Confidence: 100.00%) - Correct
+Antler4F_antler4F_angle180_439.png: Tine (Confidence: 100.00%) - Correct
+Antler4F_antler4F_angle225_539.png: Tine (Confidence: 99.98%) - Correct
+Antler4F_antler4F_angle225_616.png: Tine (Confidence: 100.00%) - Correct
+Antler4F_antler4F_angle315_553.png: Tine (Confidence: 99.98%) - Correct
+Antler4F_antler4F_angle45_471.png: Tine (Confidence: 100.00%) - Correct
+Antler5F_antler5F_angle0_290.png: Tine (Confidence: 100.00%) - Correct
+Antler5F_antler5F_angle180_140.png: Tine (Confidence: 99.99%) - Correct
+Antler5F_antler5F_angle225_361.png: Tine (Confidence: 100.00%) - Correct
+Antler5F_antler5F_angle270_292.png: Tine (Confidence: 100.00%) - Correct
+Antler5F_antler5F_angle270_304.png: Tine (Confidence: 99.99%) - Correct
+Antler5F_antler5F_angle45_333.png: Tine (Confidence: 99.96%) - Correct
+Antler5F_antler5F_angle45_340.png: Tine (Confidence: 99.89%) - Correct
+Antler6F_antler6F_angle0_330.png: Tine (Confidence: 100.00%) - Correct
+Antler6F_antler6F_angle225_332.png: Tine (Confidence: 100.00%) - Correct
+Antler6F_antler6F_angle225_374.png: Tine (Confidence: 99.99%) - Correct
+Antler6F_antler6F_angle315_154.png: Tine (Confidence: 76.76%) - Correct
+Antler6F_antler6F_angle45_371.png: Tine (Confidence: 99.99%) - Correct
+Antler6F_antler6F_angle90_403.png: Tine (Confidence: 100.00%) - Correct
+Antler7F_antler7F_angle45_421.png: Tine (Confidence: 99.92%) - Correct
+Antler8F_antler8F_angle0_548.png: Tine (Confidence: 100.00%) - Correct
+Antler8F_antler8F_angle270_626.png: Tine (Confidence: 100.00%) - Correct
+Antler8F_antler8F_angle45_397.png: Tine (Confidence: 99.99%) - Correct
+Antler8F_antler8F_angle45_410.png: Tine (Confidence: 100.00%) - Correct
+Antler8F_antler8F_angle45_431.png: Tine (Confidence: 100.00%) - Correct
+Antler8F_antler8F_angle45_448.png: Tine (Confidence: 100.00%) - Correct
+Antler8F_antler8F_angle45_480.png: Tine (Confidence: 100.00%) - Correct
+Antler8F_antler8F_angle45_487.png: Tine (Confidence: 100.00%) - Correct
+Antler9F_antler9F_angle0_388.png: Tine (Confidence: 99.99%) - Correct
+Antler9F_antler9F_angle0_403.png: Tine (Confidence: 99.99%) - Correct
+Antler9F_antler9F_angle0_411.png: Tine (Confidence: 99.98%) - Correct
+Antler9F_antler9F_angle225_253.png: Tine (Confidence: 100.00%) - Correct
+Antler9F_antler9F_angle270_409.png: Tine (Confidence: 99.68%) - Correct
+Antler9F_antler9F_angle315_241.png: Tine (Confidence: 99.98%) - Correct
+Antler9F_antler9F_angle45_422.png: Tine (Confidence: 99.96%) - Correct
+Antler9F_antler9F_angle45_435.png: Tine (Confidence: 99.86%) - Correct
+Antler9F_antler9F_angle90_297.png: Tine (Confidence: 100.00%) - Correct
+Antler10F_antler10F_angle270_307.png: Not Tine (Confidence: 95.58%) - Correct
+Antler11F_antler11F_angle135_369.png: Not Tine (Confidence: 86.64%) - Correct
+Antler11F_antler11F_angle180_293.png: Not Tine (Confidence: 54.11%) - Correct
+Antler11F_antler11F_angle270_411.png: Not Tine (Confidence: 96.80%) - Correct
+Antler11F_antler11F_angle270_471.png: Not Tine (Confidence: 61.85%) - Correct
+Antler11F_antler11F_angle45_346.png: Tine (Confidence: 87.65%) - Incorrect
+Antler11F_antler11F_angle45_392.png: Not Tine (Confidence: 72.45%) - Correct
+Antler12F_antler12F_angle135_93.png: Not Tine (Confidence: 51.47%) - Correct
+Antler12F_antler12F_angle180_42.png: Not Tine (Confidence: 97.12%) - Correct
+Antler12F_antler12F_angle225_50.png: Not Tine (Confidence: 69.46%) - Correct
+Antler12F_antler12F_angle45_120.png: Not Tine (Confidence: 82.47%) - Correct
+Antler12F_antler12F_angle90_58.png: Not Tine (Confidence: 95.09%) - Correct
+Antler13F_antler13F_angle45_109.png: Not Tine (Confidence: 75.79%) - Correct
+Antler13F_antler13F_angle45_443.png: Tine (Confidence: 57.24%) - Incorrect
+Antler13F_antler13F_angle90_186.png: Not Tine (Confidence: 99.27%) - Correct
+Antler13F_antler13F_angle90_314.png: Not Tine (Confidence: 97.88%) - Correct
+Antler15F_antler15F_angle0_166.png: Not Tine (Confidence: 99.91%) - Correct
+Antler15F_antler15F_angle180_327.png: Not Tine (Confidence: 54.57%) - Correct
+Antler15F_antler15F_angle180_49.png: Tine (Confidence: 51.22%) - Incorrect
+Antler15F_antler15F_angle90_125.png: Not Tine (Confidence: 99.83%) - Correct
+Antler15F_antler15F_angle90_143.png: Not Tine (Confidence: 99.84%) - Correct
+Antler16F_antler16F_angle225_399.png: Not Tine (Confidence: 97.46%) - Correct
+Antler16F_antler16F_angle270_95.png: Not Tine (Confidence: 85.16%) - Correct
+Antler16F_antler16F_angle90_105.png: Not Tine (Confidence: 99.88%) - Correct
+Antler16F_antler16F_angle90_371.png: Not Tine (Confidence: 99.88%) - Correct
+Antler17F_antler17F_angle315_87.png: Not Tine (Confidence: 98.28%) - Correct
+Antler17F_antler17F_angle45_343.png: Not Tine (Confidence: 98.57%) - Correct
+Antler18F_antler18F_angle90_153.png: Not Tine (Confidence: 96.29%) - Correct
+Antler19F_antler19F_angle0_306.png: Not Tine (Confidence: 96.09%) - Correct
+Antler19F_antler19F_angle0_485.png: Not Tine (Confidence: 99.63%) - Correct
+Antler19F_antler19F_angle0_519.png: Not Tine (Confidence: 97.43%) - Correct
+Antler19F_antler19F_angle135_263.png: Not Tine (Confidence: 93.93%) - Correct
+Antler19F_antler19F_angle180_273.png: Not Tine (Confidence: 88.81%) - Correct
+Antler19F_antler19F_angle270_213.png: Not Tine (Confidence: 94.35%) - Correct
+Antler19F_antler19F_angle270_85.png: Not Tine (Confidence: 97.70%) - Correct
+Antler1F_antler1F_angle180_126.png: Not Tine (Confidence: 94.02%) - Correct
+Antler1F_antler1F_angle270_280.png: Not Tine (Confidence: 78.14%) - Correct
+Antler1F_antler1F_angle45_236.png: Not Tine (Confidence: 93.20%) - Correct
+Antler20F_antler20F_angle270_360.png: Not Tine (Confidence: 93.62%) - Correct
+Antler20F_antler20F_angle315_250.png: Not Tine (Confidence: 90.53%) - Correct
+Antler21F_antler21F_angle270_81.png: Not Tine (Confidence: 91.38%) - Correct
+Antler21F_antler21F_angle315_255.png: Not Tine (Confidence: 85.56%) - Correct
+Antler22F_antler22F_angle315_56.png: Not Tine (Confidence: 66.61%) - Correct
+Antler22F_antler22F_angle45_285.png: Not Tine (Confidence: 87.92%) - Correct
+Antler22F_antler22F_angle45_387.png: Not Tine (Confidence: 79.17%) - Correct
+Antler23F_antler23F_angle0_298.png: Not Tine (Confidence: 97.31%) - Correct
+Antler24F_antler24F_angle270_358.png: Not Tine (Confidence: 96.49%) - Correct
+Antler25F_antler25F_angle0_336.png: Not Tine (Confidence: 98.22%) - Correct
+Antler25F_antler25F_angle135_355.png: Tine (Confidence: 56.79%) - Incorrect
+Antler25F_antler25F_angle180_208.png: Not Tine (Confidence: 99.30%) - Correct
+Antler25F_antler25F_angle315_185.png: Not Tine (Confidence: 71.71%) - Correct
+Antler25F_antler25F_angle90_210.png: Not Tine (Confidence: 64.75%) - Correct
+Antler26F_antler26F_angle135_155.png: Not Tine (Confidence: 97.89%) - Correct
+Antler26F_antler26F_angle270_311.png: Not Tine (Confidence: 74.87%) - Correct
+Antler27F_antler27F_angle0_302.png: Not Tine (Confidence: 99.76%) - Correct
+Antler27F_antler27F_angle0_340.png: Not Tine (Confidence: 98.61%) - Correct
+Antler27F_antler27F_angle180_333.png: Not Tine (Confidence: 85.59%) - Correct
+Antler28F_antler28F_angle0_210.png: Not Tine (Confidence: 99.70%) - Correct
+Antler28F_antler28F_angle45_151.png: Not Tine (Confidence: 97.88%) - Correct
+Antler28F_antler28F_angle45_235.png: Not Tine (Confidence: 98.21%) - Correct
+Antler28F_antler28F_angle90_176.png: Not Tine (Confidence: 98.59%) - Correct
+Antler29F_antler29F_angle315_216.png: Not Tine (Confidence: 98.62%) - Correct
+Antler29F_antler29F_angle315_328.png: Not Tine (Confidence: 93.18%) - Correct
+Antler29F_antler29F_angle315_483.png: Not Tine (Confidence: 81.52%) - Correct
+Antler29F_antler29F_angle90_108.png: Not Tine (Confidence: 86.89%) - Correct
+Antler29F_antler29F_angle90_236.png: Not Tine (Confidence: 93.48%) - Correct
+Antler2F_antler2F_angle0_241.png: Not Tine (Confidence: 99.85%) - Correct
+Antler2F_antler2F_angle270_179.png: Not Tine (Confidence: 98.75%) - Correct
+Antler2F_antler2F_angle45_366.png: Not Tine (Confidence: 99.66%) - Correct
+Antler2F_antler2F_angle90_348.png: Not Tine (Confidence: 97.62%) - Correct
+Antler30F_antler30F_angle0_461.png: Not Tine (Confidence: 76.13%) - Correct
+Antler30F_antler30F_angle135_292.png: Not Tine (Confidence: 82.25%) - Correct
+Antler30F_antler30F_angle225_286.png: Not Tine (Confidence: 94.01%) - Correct
+Antler30F_antler30F_angle225_361.png: Not Tine (Confidence: 73.08%) - Correct
+Antler30F_antler30F_angle315_372.png: Not Tine (Confidence: 89.20%) - Correct
+Antler31F_antler31F_angle0_109.png: Not Tine (Confidence: 89.95%) - Correct
+Antler31F_antler31F_angle135_266.png: Not Tine (Confidence: 97.03%) - Correct
+Antler31F_antler31F_angle90_119.png: Not Tine (Confidence: 98.05%) - Correct
+Antler31F_antler31F_angle90_437.png: Not Tine (Confidence: 99.29%) - Correct
+Antler31F_antler31F_angle90_91.png: Not Tine (Confidence: 93.35%) - Correct
+Antler32F_antler32F_angle315_88.png: Not Tine (Confidence: 99.62%) - Correct
+Antler33F_antler33F_angle225_257.png: Not Tine (Confidence: 89.98%) - Correct
+Antler34F_antler34F_angle135_352.png: Not Tine (Confidence: 94.58%) - Correct
+Antler34F_antler34F_angle225_336.png: Not Tine (Confidence: 99.42%) - Correct
+Antler35F_antler35F_angle225_433.png: Not Tine (Confidence: 92.51%) - Correct
+Antler35F_antler35F_angle315_120.png: Not Tine (Confidence: 97.36%) - Correct
+Antler35F_antler35F_angle315_331.png: Not Tine (Confidence: 93.98%) - Correct
+Antler35F_antler35F_angle45_153.png: Not Tine (Confidence: 94.29%) - Correct
+Antler35F_antler35F_angle45_442.png: Not Tine (Confidence: 94.73%) - Correct
+Antler36F_antler36F_angle315_197.png: Not Tine (Confidence: 75.06%) - Correct
+Antler36F_antler36F_angle315_241.png: Not Tine (Confidence: 88.18%) - Correct
+Antler37F_antler37F_angle0_116.png: Not Tine (Confidence: 99.37%) - Correct
+Antler37F_antler37F_angle315_334.png: Not Tine (Confidence: 86.32%) - Correct
+Antler38F_antler38F_angle0_280.png: Not Tine (Confidence: 99.02%) - Correct
+Antler38F_antler38F_angle0_344.png: Not Tine (Confidence: 89.46%) - Correct
+Antler38F_antler38F_angle315_85.png: Not Tine (Confidence: 97.08%) - Correct
+Antler38F_antler38F_angle90_463.png: Not Tine (Confidence: 93.01%) - Correct
+Antler39F_antler39F_angle0_395.png: Not Tine (Confidence: 99.35%) - Correct
+Antler39F_antler39F_angle180_343.png: Not Tine (Confidence: 99.59%) - Correct
+Antler39F_antler39F_angle270_119.png: Not Tine (Confidence: 96.87%) - Correct
+Antler39F_antler39F_angle315_148.png: Not Tine (Confidence: 91.47%) - Correct
+Antler39F_antler39F_angle315_171.png: Not Tine (Confidence: 80.95%) - Correct
+Antler3F_antler3F_angle135_268.png: Not Tine (Confidence: 56.53%) - Correct
+Antler3F_antler3F_angle315_386.png: Not Tine (Confidence: 95.77%) - Correct
+Antler3F_antler3F_angle90_396.png: Not Tine (Confidence: 86.27%) - Correct
+Antler40F_antler40F_angle0_32.png: Not Tine (Confidence: 90.87%) - Correct
+Antler40F_antler40F_angle0_345.png: Not Tine (Confidence: 99.35%) - Correct
+Antler40F_antler40F_angle45_289.png: Not Tine (Confidence: 76.31%) - Correct
+Antler40F_antler40F_angle90_54.png: Not Tine (Confidence: 93.37%) - Correct
+Antler40F_antler40F_angle90_80.png: Not Tine (Confidence: 94.19%) - Correct
+Antler41F_antler41F_angle0_205.png: Not Tine (Confidence: 94.07%) - Correct
+Antler41F_antler41F_angle270_166.png: Not Tine (Confidence: 98.64%) - Correct
+Antler41F_antler41F_angle270_289.png: Not Tine (Confidence: 95.79%) - Correct
+Antler41F_antler41F_angle45_39.png: Not Tine (Confidence: 89.59%) - Correct
+Antler43F_antler43F_angle315_270.png: Not Tine (Confidence: 75.90%) - Correct
+Antler43F_antler43F_angle45_140.png: Not Tine (Confidence: 97.91%) - Correct
+Antler44F_antler44F_angle180_78.png: Not Tine (Confidence: 98.88%) - Correct
+Antler45F_antler45F_angle0_212.png: Not Tine (Confidence: 86.52%) - Correct
+Antler47F_antler47F_angle180_342.png: Not Tine (Confidence: 75.86%) - Correct
+Antler47F_antler47F_angle270_184.png: Not Tine (Confidence: 99.94%) - Correct
+Antler47F_antler47F_angle45_425.png: Not Tine (Confidence: 91.56%) - Correct
+Antler5F_antler5F_angle0_113.png: Not Tine (Confidence: 85.79%) - Correct
+Antler5F_antler5F_angle315_82.png: Not Tine (Confidence: 95.24%) - Correct
+Antler5F_antler5F_angle45_113.png: Not Tine (Confidence: 86.18%) - Correct
+Antler5F_antler5F_angle90_73.png: Tine (Confidence: 83.71%) - Incorrect
+Antler5F_antler5F_angle90_93.png: Tine (Confidence: 74.01%) - Incorrect
+Antler6F_antler6F_angle270_79.png: Not Tine (Confidence: 50.28%) - Correct
+Antler6F_antler6F_angle45_63.png: Not Tine (Confidence: 96.25%) - Correct
+Antler6F_antler6F_angle90_74.png: Not Tine (Confidence: 52.36%) - Correct
+Antler7F_antler7F_angle0_334.png: Not Tine (Confidence: 65.22%) - Correct
+Antler7F_antler7F_angle0_401.png: Not Tine (Confidence: 61.01%) - Correct
+Antler7F_antler7F_angle180_239.png: Not Tine (Confidence: 94.49%) - Correct
+Antler7F_antler7F_angle270_459.png: Not Tine (Confidence: 96.80%) - Correct
+Antler8F_antler8F_angle225_358.png: Not Tine (Confidence: 95.09%) - Correct
+Antler8F_antler8F_angle270_592.png: Not Tine (Confidence: 86.27%) - Correct
+Antler8F_antler8F_angle315_124.png: Not Tine (Confidence: 90.70%) - Correct
+Antler8F_antler8F_angle315_97.png: Not Tine (Confidence: 97.31%) - Correct
+Antler8F_antler8F_angle45_19.png: Not Tine (Confidence: 93.17%) - Correct
+Antler9F_antler9F_angle135_162.png: Not Tine (Confidence: 91.06%) - Correct
+Antler9F_antler9F_angle270_124.png: Not Tine (Confidence: 99.94%) - Correct
+Antler9F_antler9F_angle270_364.png: Not Tine (Confidence: 99.96%) - Correct
+Antler9F_antler9F_angle315_72.png: Not Tine (Confidence: 99.42%) - Correct
+Antler9F_antler9F_angle45_403.png: Not Tine (Confidence: 61.87%) - Correct

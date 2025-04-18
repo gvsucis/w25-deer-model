@@ -1,50 +1,85 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import emailjs from "emailjs-com";
+import axios from "axios";
+import { useSession } from "next-auth/react";
+
+interface Scan {
+  scanid: string;
+  userid: string;
+  url: string;
+  createdAt: string;
+  name: string;
+}
 
 export default function Services() {
   const [serviceType, setServiceType] = useState<string[]>([]);
+  const { data: session, status } = useSession();
+  const [scans, setScans] = useState<Scan[]>([]);
+  const [selectedScan, setSelectedScan] = useState<string | null>(null);
 
-  const handleServiceTypeChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  useEffect(() => {
+    if (status === "authenticated" && session?.user?.id) {
+      axios
+        .get(`http://localhost:8000/api/scans?userid=${session.user.id}`)
+        .then((response) => setScans(response.data))
+        .catch((error) => console.error("internal eror", error));
+    }
+  }, [status, session]);
+
+  const handleScanSelect = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    setSelectedScan(event.target.value);
+  };
+
+  const handleServiceTypeChange = (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
     const { name, checked } = event.target;
-    const updatedServices = checked ? [...serviceType, name] : serviceType.filter((type) => type !== name);
+    const updatedServices = checked
+      ? [...serviceType, name]
+      : serviceType.filter((type) => type !== name);
     setServiceType(updatedServices);
   };
 
   const sendEmail = () => {
     emailjs.send(
-      'service_s752vvc',
-      'template_yt796jk',
+      'service_s752vvc', // REPLACE WITH YOUR SERVICE ID
+      'template_yt796jk', // REPLACE WITH YOUR TEMPLATE ID
       {
         message: `Service Type: ${serviceType.join(", ")}\nPrice: $$$`,
       },
-      'k7AWvwMDUA2tyGYhb'
+      'k7AWvwMDUA2tyGYhb' // REPLACE WITH YOUR USER API KEY
     ).then((response) => {
       console.log('Email sent successfully!', response.status, response.text);
     }).catch((err) => {
       console.error('Failed to send email:', err);
     });
   };
+
   return (
     <main className="bg-white min-h-screen font-[family-name:var(--font-geist-sans)]">
-      <div className="grid grid-cols-[324px_1fr_1fr] gap-4 p-4 w-full h-[1000px] pt-[120px] whitespace-nowrap">
+      <div className="grid grid-cols-[324px_1fr_1fr] max-[879px]:grid-cols-2 gap-4 p-4 w-full h-[1000px] pt-[120px] whitespace-nowrap">
         {/* First Column - Upload Box & Amount Due */}
         <div className="relative items-start border-r-4 border-black">
           {/* Upload File Box */}
-          <div className="flex flex-col items-center text-black text-lg justify-center border-4 border-black bg-white p-1 h-[200px] w-[300px] mt-8">
+          <div className="flex flex-col items-center text-black text-lg font-medium pt-6 border-4 border-black bg-gray-100 h-[200px] w-[300px] mt-8">
             Pick a Scan to Complete Service
-            <form action="" className="text-sm p-3 space-y-8 items-center">
-              <input
-                type="file"
-                name="buck_scan"
-                className="text-black w-full"
-              />
-              <input
-                type="submit"
-                value="Upload Scan"
-                className="block text-lg text-white border-solid border-black border-2 bg-blue-600 rounded hover:bg-[#383838] dark:hover:bg-[#ccc] px-2 h-8"
-              />
+            <form action="" className="text-md font-normal p-3 space-y-8 items-center h-[140px] w-[292px] border-b-4 border-orange-500">
+              <select
+                value={selectedScan || ""}
+                onChange={handleScanSelect}
+                className="text-black w-full border-2 border-black"
+              >
+                <option value="" disabled>
+                  Select a scan
+                </option>
+                {scans.map((scan) => (
+                  <option key={scan.scanid} value={scan.scanid}>
+                    {scan.name || "Unnamed Scan"}
+                  </option>
+                ))}
+              </select>
             </form>
           </div>
 
@@ -53,12 +88,26 @@ export default function Services() {
             <h2 className="text-xl font-bold mb-2">Choose Purchase Options</h2>
             <form className="space-y-2">
               <div>
-                <input type="checkbox" id="3dModel" name="3dModel" onChange={handleServiceTypeChange} />
-                <label htmlFor="3dModel" className="ml-2">3D Model</label>
+                <input
+                  type="checkbox"
+                  id="3dModel"
+                  name="3dModel"
+                  onChange={handleServiceTypeChange}
+                />
+                <label htmlFor="3dModel" className="ml-2">
+                  3D Model
+                </label>
               </div>
               <div>
-                <input type="checkbox" id="taxidermy" name="taxidermy" onChange={handleServiceTypeChange} />
-                <label htmlFor="taxidermy" className="ml-2">Taxidermy</label>
+                <input
+                  type="checkbox"
+                  id="taxidermy"
+                  name="taxidermy"
+                  onChange={handleServiceTypeChange}
+                />
+                <label htmlFor="taxidermy" className="ml-2">
+                  Taxidermy
+                </label>
               </div>
             </form>
           </div>
@@ -124,12 +173,8 @@ export default function Services() {
             height={222}
           />
           {/*scale selection*/}
-          <div className="text-lg text-bold ml-2">
-            Shoulder: (placeholder)
-          </div>
-          <div className="text-lg text-bold ml-2">
-            Full: (placeholder)
-          </div>
+          <div className="text-lg text-bold ml-2">Shoulder: (placeholder)</div>
+          <div className="text-lg text-bold ml-2">Full: (placeholder)</div>
         </div>
       </div>
     </main>

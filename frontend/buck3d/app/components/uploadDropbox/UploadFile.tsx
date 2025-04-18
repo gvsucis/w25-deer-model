@@ -60,19 +60,28 @@ export default function UploadFile() {
   const { getRootProps, getInputProps } = useDropzone({ onDrop });
 
   return (
-    <div {...getRootProps()} className="border p-5 cursor-pointer bg-gray-100">
+    <div
+      {...getRootProps()}
+      className="flex flex-col items-center w-[392px] h-[292px] p-2 cursor-pointer bg-gray-100 text-center font-bold"
+    >
       <input {...getInputProps()} />
       {uploading ? (
         <p>Uploading...</p>
       ) : (
-        <p>Drag & Drop a file or click to select</p>
+        <p>
+          Upload Your Buck Photo Here
+          <br />
+          Drag & Drop a file or click to select
+          <br />
+          Reload page to see changes
+        </p>
       )}
       {fileUrl && (
-        <div className="mt-4">
+        <div className="mt-2">
           <img
             src={fileUrl}
             alt="Uploaded file preview"
-            className="max-w-full h-auto"
+            className="max-h-[153px]"
           />
         </div>
       )}
