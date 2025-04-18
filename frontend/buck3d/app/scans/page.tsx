@@ -19,53 +19,73 @@ export default function Scans() {
   const { data: session, status } = useSession();
   const [scans, setScans] = useState<Scan[]>([]);
   const [matches, setMatches] = useState<Match[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [loadedImages, setLoadedImages] = useState<Set<string>>(new Set());
 
   useEffect(() => {
     if (status === "authenticated" && session?.user?.id) {
-      axios
+      setIsLoading(true);
+
+      const fetchScans = axios
         .get(`http://localhost:8000/api/scans?userid=${session.user.id}`)
         .then((response) => setScans(response.data))
-        .catch((error) => console.error("internal eror", error));
+        .catch((error) => console.error("internal error", error));
 
-       axios
-         .get(`http://localhost:8000/api/matches?userid=${session.user.id}`)
-         .then((res) => setMatches(res.data))
-         .catch((err) => console.error("match fetch error", err));
+      const fetchMatches = axios
+        .get(`http://localhost:8000/api/matches?userid=${session.user.id}`)
+        .then((res) => setMatches(res.data))
+        .catch((err) => console.error("match fetch error", err));
+
+      // Wait for both requests to complete
+      Promise.all([fetchScans, fetchMatches]).finally(() => {
+        // Set loading to false only after data is fetched
+        setIsLoading(false);
+      });
     }
   }, [status, session]);
 
-   const handleViewClick = async (scan: Scan) => {
-     localStorage.setItem("scanid", scan.scanid);
-     localStorage.setItem("scanurl", scan.url);
+  // Track loaded images
+  const handleImageLoad = (scanId: string) => {
+    setLoadedImages((prev) => {
+      const updated = new Set(prev);
+      updated.add(scanId);
+      return updated;
+    });
+  };
 
-     const existingMatch = matches.find((m) => m.scanid === scan.scanid);
 
-     let modelUrl: string;
+  const handleViewClick = async (scan: Scan) => {
+    localStorage.setItem("scanid", scan.scanid);
+    localStorage.setItem("scanurl", scan.url);
 
-     if (existingMatch) {
-       // Use existing matchid
-       modelUrl = `https://buckview3d.s3.us-east-1.amazonaws.com/3dmodels/${existingMatch.matchid}.stl`;
-     } else {
-       try {
-         const response = await axios.post(
-           "http://localhost:8000/api/match-antler",
-           {
-             scanid: scan.scanid,
-             userid: session?.user?.id,
-             fileUrl: scan.url,
-           }
-         );
+    const existingMatch = matches.find((m) => m.scanid === scan.scanid);
 
-         modelUrl = response.data.modelUrl;
-       } catch (error) {
-         console.error("Error generating 3D match:", error);
-         return;
-       }
-     }
+    let modelUrl: string;
 
-     localStorage.setItem("matchModelUrl", modelUrl);
-     window.location.href = "/viewer";
-   };
+    if (existingMatch) {
+      // Use existing matchid
+      modelUrl = `https://buckview3d.s3.us-east-1.amazonaws.com/3dmodels/${existingMatch.matchid}.stl`;
+    } else {
+      try {
+        const response = await axios.post(
+          "http://localhost:8000/api/match-antler",
+          {
+            scanid: scan.scanid,
+            userid: session?.user?.id,
+            fileUrl: scan.url,
+          }
+        );
+
+        modelUrl = response.data.modelUrl;
+      } catch (error) {
+        console.error("Error generating 3D match:", error);
+        return;
+      }
+    }
+
+    localStorage.setItem("matchModelUrl", modelUrl);
+    window.location.href = "/viewer";
+  };
 
   return (
     <main className="bg-white min-h-screen font-[family-name:var(--font-geist-sans)]">
@@ -74,49 +94,59 @@ export default function Scans() {
         <div className="flex flex-col items-center text-black text-lg justify-center box border-4 border-black bg-white p-1 h-[200px] w-[300px]">
           <p>Upload Your Buck Photo Here</p>
           <UploadFile />
-          {/*need to add action photo upload to cloud*/}
-          {/* <form action="" className="text-sm p-3 space-y-12">
-            <input
-              type="file"
-              name="buck_photo"
-              className="text-black w-full"
-            />
-            <input
-              type="submit"
-              value="Upload Image"
-              className="text-lg text-white border-solid border-black border-2 bg-blue-600 rounded hover:bg-[#383838] dark:hover:bg-[#ccc] px-2 h-8"
-            />
-          </form> */}
         </div>
       </div>
+
       {/*Grid for previous scans*/}
       <div className="text-black text-2xl font-bold pb-6 ml-6">
         Previous Scans
       </div>
-      <div className="grid grid-cols-5 gap-10 w-full justify-evenly ml-6 mr-6 text-center">
-        {scans.length > 0 ? (
-          scans.map((scan, index) => (
-            <div
-              key={scan.scanid}
-              className="relative rounded-lg w-32 h-32 border-4 border-black overflow-hidden"
-            >
-              <img
-                src={scan.url}
-                alt={`Scan ${index + 1}`}
-                className="object-cover w-full h-full"
-              />
-              <a
-                className="absolute bottom-2 right-2 rounded-full bg-orange-500 transition-colors flex items-center justify-center text-black hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm h-5 w-12 px-4"
-                onClick={() => handleViewClick(scan)}
+
+      {isLoading ? (
+        <div className="flex justify-center items-center p-10">
+          <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-orange-500"></div>
+        </div>
+      ) : (
+        <div className="grid grid-cols-5 gap-10 w-full justify-evenly ml-6 mr-6 text-center">
+          {scans.length > 0 ? (
+            scans.map((scan, index) => (
+              <div
+                key={scan.scanid}
+                className="relative rounded-lg w-32 h-32 border-4 border-black overflow-hidden"
               >
-                View
-              </a>
-            </div>
-          ))
-        ) : (
-          <p className="col-span-5 text-black">No scans available yet.</p>
-        )}
-      </div>
+                {/* Load images in the background */}
+                <div
+                  className={!loadedImages.has(scan.scanid) ? "invisible" : ""}
+                >
+                  <img
+                    src={scan.url}
+                    alt={`Scan ${index + 1}`}
+                    className="object-cover w-full h-full"
+                    onLoad={() => handleImageLoad(scan.scanid)}
+                    onError={() => handleImageLoad(scan.scanid)} // Handle error case too
+                  />
+                </div>
+
+                {/* Show loading spinner while image loads */}
+                {!loadedImages.has(scan.scanid) && (
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="animate-spin rounded-full h-6 w-6 border-t-2 border-b-2 border-orange-500"></div>
+                  </div>
+                )}
+
+                <a
+                  className="absolute bottom-2 right-2 rounded-full bg-orange-500 transition-colors flex items-center justify-center text-black hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm h-5 w-12 px-4 cursor-pointer"
+                  onClick={() => handleViewClick(scan)}
+                >
+                  View
+                </a>
+              </div>
+            ))
+          ) : (
+            <p className="col-span-5 text-black">No scans available yet.</p>
+          )}
+        </div>
+      )}
     </main>
   );
 }
