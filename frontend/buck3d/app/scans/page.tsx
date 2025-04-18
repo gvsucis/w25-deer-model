@@ -23,29 +23,36 @@ export default function Scans() {
   const [isLoading, setIsLoading] = useState(true);
   const [loadedImages, setLoadedImages] = useState<Set<string>>(new Set());
 
-  useEffect(() => {
+  // Function to fetch data - can be called after upload completes
+  const fetchData = async () => {
     if (status === "authenticated" && session?.user?.id) {
       setIsLoading(true);
+      setLoadedImages(new Set()); // Reset loaded images tracking
 
-      const fetchScans = axios
-        .get(`http://localhost:8000/api/scans?userid=${session.user.id}`)
-        .then((response) => setScans(response.data))
-        .catch((error) => console.error("internal error", error));
+      try {
+        // Execute requests in parallel
+        const [scansResponse, matchesResponse] = await Promise.all([
+          axios.get(
+            `http://localhost:8000/api/scans?userid=${session.user.id}`
+          ),
+          axios.get(
+            `http://localhost:8000/api/matches?userid=${session.user.id}`
+          ),
+        ]);
 
-      const fetchMatches = axios
-        .get(`http://localhost:8000/api/matches?userid=${session.user.id}`)
-        .then((res) => setMatches(res.data))
-        .catch((err) => console.error("match fetch error", err));
-
-      // Wait for both requests to complete
-      Promise.all([fetchScans, fetchMatches]).finally(() => {
-        // Set loading to false only after data is fetched
+        setScans(scansResponse.data);
+        setMatches(matchesResponse.data);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      } finally {
         setIsLoading(false);
-      });
-      axios
-        .get(`http://localhost:8000/api/matches?userid=${session.user.id}`)
-        .then((res) => setMatches(res.data))
-        .catch((err) => console.error("match fetch error", err));
+      }
+    }
+  };
+
+  useEffect(() => {
+    if (status === "authenticated" && session?.user?.id) {
+      fetchData();
     }
   }, [status, session]);
 
@@ -58,10 +65,6 @@ export default function Scans() {
     });
   };
 
-
-  const handleViewClick = async (scan: Scan) => {
-    localStorage.setItem("scanid", scan.scanid);
-    localStorage.setItem("scanurl", scan.url);
   const handleViewClick = async (scan: Scan) => {
     localStorage.setItem("scanurl", scan.url);
     localStorage.setItem("scanname", scan.name || "Unnamed Scan"); // Save name
@@ -97,12 +100,16 @@ export default function Scans() {
 
   // NOTE: Make sure to delete from the S3 bucket as well with what ever key you use
   const handleDeleteClick = async (scan: Scan) => {
-    const confirmDelete = window.confirm(`Are you sure you want to delete "${scan.name || 'this scan'}"?`);
-  
+    const confirmDelete = window.confirm(
+      `Are you sure you want to delete "${scan.name || "this scan"}"?`
+    );
+
     if (!confirmDelete) return;
-  
+
     try {
-      await axios.delete(`http://localhost:8000/api/scans?userid=${session?.user?.id}&scanid=${scan.scanid}`);
+      await axios.delete(
+        `http://localhost:8000/api/scans?userid=${session?.user?.id}&scanid=${scan.scanid}`
+      );
       // Optionally update the UI after deletion
       setScans((prev) => prev.filter((s) => s.scanid !== scan.scanid));
     } catch (error) {
@@ -114,13 +121,13 @@ export default function Scans() {
   const handleRenameClick = async (scan: Scan) => {
     const newName = prompt("Enter a new name for this scan:", scan.name || "");
     if (!newName || newName.trim() === "") return;
-  
+
     try {
       const response = await axios.patch(
         `http://localhost:8000/api/scans?userid=${session?.user?.id}&scanid=${scan.scanid}`,
         { name: newName }
       );
-  
+
       if (response.status === 200) {
         setScans((prev) =>
           prev.map((s) =>
@@ -139,7 +146,7 @@ export default function Scans() {
       <div className="grid grid-cols-[300px_1fr] gap-4 p-4 w-full pt-[120px]">
         {/*Upload file box*/}
         <div className="flex flex-col items-center text-black text-lg justify-start box border-4 border-black bg-orange-500 p-1 h-[300px] w-[400px]">
-          <UploadFile />
+          <UploadFile onUploadComplete={fetchData} />
         </div>
       </div>
 
@@ -153,83 +160,68 @@ export default function Scans() {
           <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-orange-500"></div>
         </div>
       ) : (
-        <div className="grid grid-cols-5 gap-10 w-full justify-evenly ml-6 mr-6 text-center">
+        <div className="grid grid-cols-8 ml-6 mr-6 gap-6">
           {scans.length > 0 ? (
             scans.map((scan, index) => (
               <div
                 key={scan.scanid}
-                className="relative rounded-lg w-32 h-32 border-4 border-black overflow-hidden"
+                className="relative rounded-lg w-full h-[275px] border-4 mb-6 border-black overflow-hidden"
               >
-                {/* Load images in the background */}
-                <div
-                  className={!loadedImages.has(scan.scanid) ? "invisible" : ""}
-                >
-                  <img
-                    src={scan.url}
-                    alt={`Scan ${index + 1}`}
-                    className="object-cover w-full h-full"
-                    onLoad={() => handleImageLoad(scan.scanid)}
-                    onError={() => handleImageLoad(scan.scanid)} // Handle error case too
-                  />
+                {/* Container for the image */}
+                <div className="relative h-[215px] border-b-4 border-black">
+                  {/* The actual image - invisible until loaded */}
+                  <div
+                    className={
+                      !loadedImages.has(scan.scanid)
+                        ? "invisible h-full"
+                        : "h-full"
+                    }
+                  >
+                    <img
+                      src={`${scan.url}?t=${new Date().getTime()}`} // Add timestamp to prevent caching
+                      alt={`Scan ${index + 1}`}
+                      className="items-start object-cover w-full h-full"
+                      onLoad={() => handleImageLoad(scan.scanid)}
+                      onError={() => handleImageLoad(scan.scanid)} // Handle error case too
+                    />
+                  </div>
+
+                  {/* Loading spinner - shown until image is loaded */}
+                  {!loadedImages.has(scan.scanid) && (
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="animate-spin rounded-full h-10 w-10 border-t-2 border-b-2 border-orange-500"></div>
+                    </div>
+                  )}
                 </div>
 
-                {/* Show loading spinner while image loads */}
-                {!loadedImages.has(scan.scanid) && (
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="animate-spin rounded-full h-6 w-6 border-t-2 border-b-2 border-orange-500"></div>
-                  </div>
-                )}
-
                 <a
-                  className="absolute bottom-2 right-2 rounded-full bg-orange-500 transition-colors flex items-center justify-center text-black hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm h-5 w-12 px-4 cursor-pointer"
+                  className="absolute bottom-2 left-[155px] rounded-full bg-orange-500 transition-colors flex items-center justify-center text-black font-medium hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm h-5 w-12 px-3 cursor-pointer"
                   onClick={() => handleViewClick(scan)}
                 >
                   View
                 </a>
+                <a
+                  className="absolute bottom-2 left-2 rounded-full bg-black transition-colors flex items-center justify-center text-white font-medium hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm h-5 w-auto px-3 cursor-pointer"
+                  onClick={() => handleDeleteClick(scan)}
+                >
+                  Delete
+                </a>
+                <a
+                  className="absolute bottom-2 left-[80px] rounded-full bg-blue-500 transition-colors flex items-center justify-center text-black font-medium hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm h-5 w-auto px-2 cursor-pointer"
+                  onClick={() => handleRenameClick(scan)}
+                >
+                  Rename
+                </a>
+                <p className="text-black text-sm font-medium pl-2">
+                  Name: {scan.name ? scan.name : "Unnamed Scan"}
+                </p>
               </div>
             ))
           ) : (
-            <p className="col-span-5 text-black">No scans available yet.</p>
+            <p className="m-6 text-black">No scans available yet.</p>
           )}
         </div>
       )}
-      <div className="grid grid-cols-8 ml-6 mr-6 gap-6">
-        {scans.length > 0 ? (
-          scans.map((scan, index) => (
-            <div
-              key={scan.scanid}
-              className="relative rounded-lg w-full h-[275px] border-4 mb-6 border-black overflow-hidden"
-            >
-              <img
-                src={scan.url}
-                alt={`Scan ${index + 1}`}
-                className="items-start object-cover w-full h-[215px] border-b-4 border-black"
-              />
-              <a
-                className="absolute bottom-2 left-[155px] rounded-full bg-orange-500 transition-colors flex items-center justify-center text-black font-medium hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm h-5 w-12 px-3"
-                onClick={() => handleViewClick(scan)}
-              >
-                View
-              </a>
-              <a
-                className="absolute bottom-2 left-2 rounded-full bg-black transition-colors flex items-center justify-center text-white font-medium hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm h-5 w-auto px-3"
-                onClick={() => handleDeleteClick(scan)}
-              >
-                Delete
-              </a>
-              <a
-                className="absolute bottom-2 left-[80px] rounded-full bg-blue-500 transition-colors flex items-center justify-center text-black font-medium hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm h-5 w-auto px-2"
-                onClick={() => handleRenameClick(scan)}
-              >
-                Rename
-              </a>
-              <p className="text-black text-sm font-medium pl-2"> Name: {scan.name ? scan.name : 'Unnamed Scan'}</p>
-            </div>
-          ))
-        ) : (
-          <p className="m-6 text-black">No scans available yet.</p>
-        )}
-      </div>
     </main>
   );
 }

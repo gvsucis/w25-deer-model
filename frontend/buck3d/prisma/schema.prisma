@@ -54,6 +54,7 @@ model VerificationToken {
 }
 model Scan2D {
   scanid   String  @id @default(uuid())
+  name String
   userid   String  
   url      String  
   createdAt DateTime @default(now())
