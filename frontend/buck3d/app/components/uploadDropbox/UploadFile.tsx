@@ -5,7 +5,12 @@ import { useDropzone } from "react-dropzone";
 import axios from "axios";
 import { useSession } from "next-auth/react";
 
-export default function UploadFile() {
+// Add the onUploadComplete prop but make it optional
+interface UploadFileProps {
+  onUploadComplete?: () => void;
+}
+
+export default function UploadFile({ onUploadComplete }: UploadFileProps) {
   const { data: session, status } = useSession();
   const [uploading, setUploading] = useState(false);
   const [fileUrl, setFileUrl] = useState<string | null>(null);
@@ -47,14 +52,20 @@ export default function UploadFile() {
         await axios.post("http://localhost:8000/api/scans", {
           userid: session.user.id,
           url: fileUrl,
+          name: file.name, // Add filename as scan name
         });
+
+        // Notify parent component that upload has completed
+        if (onUploadComplete) {
+          onUploadComplete();
+        }
       } catch (error) {
         console.error("Upload failed", error);
       } finally {
         setUploading(false);
       }
     },
-    [session, status]
+    [session, status, onUploadComplete]
   );
 
   const { getRootProps, getInputProps } = useDropzone({ onDrop });
@@ -72,8 +83,6 @@ export default function UploadFile() {
           Upload Your Buck Photo Here
           <br />
           Drag & Drop a file or click to select
-          <br />
-          Reload page to see changes
         </p>
       )}
       {fileUrl && (
